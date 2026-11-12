@@ -1,0 +1,38 @@
+{
+  "name": "ensf-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "seed": "node scripts/seed.mjs"
+  },
+  "dependencies": {
+    "@fontsource/dm-serif-display": "^5.3.0",
+    "@fontsource/figtree": "^5.3.0",
+    "@fontsource/fraunces": "^5.3.0",
+    "@fontsource/ibm-plex-sans-arabic": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
+    "@fontsource/noto-naskh-arabic": "^5.3.0",
+    "@fontsource/noto-sans-arabic": "^5.3.0",
+    "@tailwindcss/typography": "^0.5.20",
+    "bcryptjs": "^3.0.3",
+    "next": "16.4.6",
+    "next-auth": "^5.0.0-beta.32",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5"
+  }
+}

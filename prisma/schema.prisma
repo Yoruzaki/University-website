@@ -1,0 +1,191 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/* ------------------------------------------------------------
+   Auth
+------------------------------------------------------------- */
+enum Role {
+  SUPER_ADMIN
+  EDITOR
+  CONTRIBUTOR
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(EDITOR)
+  createdAt    DateTime @default(now())
+}
+
+/* ------------------------------------------------------------
+   Pages & the section library
+   A Page is just an ordered list of Sections. Each Section has
+   a `type` (matching a component in the section library) and a
+   JSON `data` blob holding that type's fields, per locale.
+------------------------------------------------------------- */
+enum PageStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model Page {
+  id          String      @id @default(cuid())
+  slug        String      @unique // e.g. "" for home, "recherche", "programmes/ingenieur"
+  status      PageStatus  @default(DRAFT)
+  titleFr     String
+  titleAr     String?
+  titleEn     String?
+  seoDescFr   String?
+  seoDescAr   String?
+  seoDescEn   String?
+  sections    Section[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+enum SectionType {
+  HERO
+  EDITORIAL
+  STATS
+  PHOTO_STORY
+  CARD_GRID
+  RESEARCH_SPOTLIGHT
+  NEWS_LIST
+  FACULTY_GRID
+  TIMELINE
+  PARTNERS
+  QUOTE
+  CONTACT_CTA
+  DOWNLOADS
+}
+
+enum SectionVariant {
+  LIGHT
+  DARK
+}
+
+model Section {
+  id        String         @id @default(cuid())
+  pageId    String
+  page      Page           @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  type      SectionType
+  variant   SectionVariant @default(LIGHT)
+  order     Int
+  // Per-locale JSON payload matching the section type's field shape.
+  dataFr    String // JSON string
+  dataAr    String? // JSON string
+  dataEn    String? // JSON string
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  @@index([pageId, order])
+}
+
+/* ------------------------------------------------------------
+   Collections
+------------------------------------------------------------- */
+model NewsItem {
+  id         String     @id @default(cuid())
+  slug       String     @unique
+  status     PageStatus @default(DRAFT)
+  titleFr    String
+  titleAr    String?
+  titleEn    String?
+  excerptFr  String?
+  excerptAr  String?
+  excerptEn  String?
+  bodyFr     String?
+  bodyAr     String?
+  bodyEn     String?
+  coverImage String?
+  category   String?
+  publishedAt DateTime  @default(now())
+  createdAt  DateTime   @default(now())
+}
+
+enum ProgramCycle {
+  LICENCE
+  INGENIEUR
+  MASTER
+  DOCTORAT
+}
+
+model Program {
+  id          String       @id @default(cuid())
+  slug        String       @unique
+  cycle       ProgramCycle
+  titleFr     String
+  titleAr     String?
+  titleEn     String?
+  summaryFr   String?
+  summaryAr   String?
+  summaryEn   String?
+  durationFr  String?
+  syllabusUrl String?
+  order       Int          @default(0)
+  createdAt   DateTime     @default(now())
+}
+
+model FacultyMember {
+  id        String   @id @default(cuid())
+  nameFr    String
+  nameAr    String?
+  titleFr   String? // e.g. "Professeur, Écologie forestière"
+  titleAr   String?
+  email     String?
+  photo     String?
+  labId     String?
+  lab       Lab?     @relation(fields: [labId], references: [id])
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model Lab {
+  id          String          @id @default(cuid())
+  slug        String          @unique
+  nameFr      String
+  nameAr      String?
+  summaryFr   String?
+  summaryAr   String?
+  members     FacultyMember[]
+  createdAt   DateTime        @default(now())
+}
+
+model DocumentFile {
+  id        String   @id @default(cuid())
+  titleFr   String
+  titleAr   String?
+  category  String?
+  fileUrl   String
+  createdAt DateTime @default(now())
+}
+
+model MenuItem {
+  id       String     @id @default(cuid())
+  labelFr  String
+  labelAr  String?
+  labelEn  String?
+  href     String     // e.g. "/" or "/recherche" (locale-agnostic internal path) or external URL
+  order    Int        @default(0)
+  parentId String?
+  parent   MenuItem?  @relation("MenuChildren", fields: [parentId], references: [id], onDelete: Cascade)
+  children MenuItem[] @relation("MenuChildren")
+}
+
+model Media {
+  id        String   @id @default(cuid())
+  url       String
+  altFr     String?
+  altAr     String?
+  width     Int?
+  height    Int?
+  createdAt DateTime @default(now())
+}

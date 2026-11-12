@@ -1,0 +1,784 @@
+{
+  "users": [
+    {
+      "id": "user_398f6c9e04544834a6837d84d374d6f3",
+      "name": "Administrateur ENSF",
+      "email": "admin@ensf-khenchela.dz",
+      "passwordHash": "$2b$10$qELFL1oYtrbjxe/FpKQb/urEgY4fBXvxOfOFzQy7MR5uaVIzD9Vi6",
+      "role": "SUPER_ADMIN",
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    }
+  ],
+  "pages": [
+    {
+      "id": "page_1feaecf3c7804019a3000ea32167dff1",
+      "slug": "",
+      "status": "PUBLISHED",
+      "titleFr": "Accueil",
+      "sections": [
+        {
+          "id": "sec_ab34d0377bae4f9796c7dcf68ee82875",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "HERO",
+          "variant": "DARK",
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "École Nationale Supérieure des Forêts — depuis 1986",
+            "title": "Former les gardiens du patrimoine forestier algérien",
+            "subtitle": "À Khenchela, au cœur des Aurès, l'ENSF forme des ingénieurs et conduit des recherches au service de la forêt, de la biodiversité et des territoires.",
+            "imageCaption": "/photos/sortie-lac.jpg",
+            "ctaLabel": "Découvrir l'école",
+            "ctaHref": "/a-propos",
+            "scrollCue": "Faire défiler"
+          }
+        },
+        {
+          "id": "sec_845a2e11098a43d18c3a77707cee8a12",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "EDITORIAL",
+          "variant": "LIGHT",
+          "order": 1,
+          "dataFr": {
+            "index": "02",
+            "eyebrow": "Notre mission",
+            "title": "Une école tournée vers la forêt, la biodiversité et la recherche",
+            "body": "L'ENSF Khenchela forme des ingénieurs forestiers capables de comprendre, gérer et protéger les écosystèmes forestiers algériens, du littoral aux hauts plateaux.\n\nNos enseignements associent sciences naturelles, gestion des territoires et recherche appliquée, en lien étroit avec la Direction Générale des Forêts et les acteurs du développement rural."
+          }
+        },
+        {
+          "id": "sec_2afa4b09605c4c6fb53c8b06f5337e4d",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "STATS",
+          "variant": "DARK",
+          "order": 2,
+          "dataFr": {
+            "eyebrow": "L'école en chiffres",
+            "items": [
+              {
+                "value": "38 ans",
+                "label": "d'existence"
+              },
+              {
+                "value": "1200+",
+                "label": "diplômés en activité"
+              },
+              {
+                "value": "6",
+                "label": "laboratoires de recherche"
+              },
+              {
+                "value": "4",
+                "label": "cycles de formation"
+              }
+            ]
+          }
+        },
+        {
+          "id": "sec_e118eb8b1bdd4330a78f62142d2f626d",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "PHOTO_STORY",
+          "variant": "DARK",
+          "order": 3,
+          "dataFr": {
+            "eyebrow": "Recherche appliquée",
+            "title": "Comprendre la forêt pour mieux la protéger",
+            "body": "Nos équipes étudient la dynamique des peuplements forestiers, les risques d'incendie et d'érosion, et la conservation de la biodiversité des massifs des Aurès et au-delà.",
+            "imageCaption": "/photos/releves-etang.jpg",
+            "imagePosition": "left",
+            "caption": "Relevés de terrain au bord de l'eau, sortie pédagogique.",
+            "ctaLabel": "Explorer nos recherches",
+            "ctaHref": "/recherche"
+          }
+        },
+        {
+          "id": "sec_468714d627964416a13fcb2f1e6cf2b1",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "CARD_GRID",
+          "variant": "LIGHT",
+          "order": 4,
+          "dataFr": {
+            "eyebrow": "Formations",
+            "title": "Quatre cycles, un même terrain d'étude : la forêt",
+            "intro": "De la licence au doctorat, nos programmes forment des spécialistes des sciences forestières.",
+            "cards": [
+              {
+                "tag": "Ingénieur",
+                "title": "Ingénieur d'État en sciences forestières",
+                "body": "La formation historique de l'école, cinq années d'enseignement intégré.",
+                "href": "/programmes",
+                "imageCaption": "/photos/sortie-foret-garde.jpg"
+              },
+              {
+                "tag": "Licence",
+                "title": "Licence en écologie forestière",
+                "body": "Trois années de bases naturalistes et de terrain.",
+                "href": "/programmes",
+                "imageCaption": "/photos/releves-fougeres.jpg"
+              },
+              {
+                "tag": "Master",
+                "title": "Master recherche et gestion forestière",
+                "body": "Spécialisation recherche ou professionnelle.",
+                "href": "/programmes",
+                "imageCaption": "/photos/labo-microscopes.jpg"
+              },
+              {
+                "tag": "Doctorat",
+                "title": "Doctorat en sciences forestières",
+                "body": "Recherche doctorale au sein de nos laboratoires.",
+                "href": "/programmes",
+                "imageCaption": "/photos/terrain-foret.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "id": "sec_66e1be35f7524b7fa9f3bd4ddd3027e8",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "RESEARCH_SPOTLIGHT",
+          "variant": "LIGHT",
+          "order": 5,
+          "dataFr": {
+            "eyebrow": "À la une de la recherche",
+            "title": "Cartographier la résilience des subéraies algériennes face au changement climatique",
+            "body": "Un programme pluriannuel associant télédétection, inventaires de terrain et modélisation pour anticiper l'évolution des chênaies-lièges.",
+            "imageCaption": "/photos/releves-gps-pins.jpg",
+            "statValue": "14",
+            "statLabel": "projets de recherche en cours",
+            "ctaLabel": "En savoir plus",
+            "ctaHref": "/recherche"
+          }
+        },
+        {
+          "id": "sec_48c9e428bca545798d24b490fe1ba380",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "NEWS_LIST",
+          "variant": "LIGHT",
+          "order": 6,
+          "dataFr": {
+            "eyebrow": "Actualités",
+            "title": "L'actualité de l'école",
+            "count": 3
+          }
+        },
+        {
+          "id": "sec_gallery_vie_universitaire",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "GALLERY",
+          "variant": "LIGHT",
+          "order": 7,
+          "dataFr": {
+            "eyebrow": "Vie universitaire",
+            "title": "Une expérience qui *va au-delà des salles de cours.*",
+            "intro": "Apprendre ensemble, expérimenter au laboratoire et sur le terrain, et s'engager pour la nature.",
+            "ctaLabel": "Découvrir l'école",
+            "ctaHref": "/fr/a-propos",
+            "images": [
+              {
+                "src": "/photos/salle-informatique.jpg",
+                "caption": "Apprendre / Partager — salle informatique"
+              },
+              {
+                "src": "/photos/bibliotheque-livres.jpg",
+                "caption": "Lire / Chercher — bibliothèque"
+              },
+              {
+                "src": "/photos/tp-laboratoire.jpg",
+                "caption": "Expérimenter / Innover — travaux pratiques"
+              },
+              {
+                "src": "/photos/salle-langues.jpg",
+                "caption": "Centre d'enseignement intensif des langues"
+              },
+              {
+                "src": "/photos/labo-equipement.jpg",
+                "caption": "Équipements de laboratoire"
+              },
+              {
+                "src": "/photos/tp-laboratoire-2.jpg",
+                "caption": "Séance de travaux pratiques"
+              }
+            ]
+          },
+          "dataAr": {
+            "eyebrow": "الحياة الجامعية",
+            "title": "تجربة *تتجاوز قاعات الدرس.*",
+            "intro": "نتعلم معًا، نجرّب في المخبر وفي الميدان، ونلتزم من أجل الطبيعة.",
+            "ctaLabel": "اكتشف المدرسة",
+            "ctaHref": "/ar/a-propos",
+            "images": [
+              {
+                "src": "/photos/salle-informatique.jpg",
+                "caption": "قاعة الإعلام الآلي"
+              },
+              {
+                "src": "/photos/bibliotheque-livres.jpg",
+                "caption": "المكتبة"
+              },
+              {
+                "src": "/photos/tp-laboratoire.jpg",
+                "caption": "الأعمال التطبيقية"
+              },
+              {
+                "src": "/photos/salle-langues.jpg",
+                "caption": "مركز التعليم المكثف للغات"
+              },
+              {
+                "src": "/photos/labo-equipement.jpg",
+                "caption": "تجهيزات المخبر"
+              },
+              {
+                "src": "/photos/tp-laboratoire-2.jpg",
+                "caption": "حصة أعمال تطبيقية"
+              }
+            ]
+          },
+          "dataEn": {
+            "eyebrow": "Campus life",
+            "title": "An experience that *goes beyond the classroom.*",
+            "intro": "Learning together, experimenting in the lab and in the field, and standing up for nature.",
+            "ctaLabel": "Discover the school",
+            "ctaHref": "/en/a-propos",
+            "images": [
+              {
+                "src": "/photos/salle-informatique.jpg",
+                "caption": "Learn / Share — computer room"
+              },
+              {
+                "src": "/photos/bibliotheque-livres.jpg",
+                "caption": "Read / Search — library"
+              },
+              {
+                "src": "/photos/tp-laboratoire.jpg",
+                "caption": "Experiment / Innovate — practical work"
+              },
+              {
+                "src": "/photos/salle-langues.jpg",
+                "caption": "Intensive language teaching centre"
+              },
+              {
+                "src": "/photos/labo-equipement.jpg",
+                "caption": "Laboratory equipment"
+              },
+              {
+                "src": "/photos/tp-laboratoire-2.jpg",
+                "caption": "Practical session"
+              }
+            ]
+          }
+        },
+        {
+          "id": "sec_fd83c4494b554c43b1465e22b70b0358",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "FACULTY_GRID",
+          "variant": "LIGHT",
+          "order": 8,
+          "dataFr": {
+            "eyebrow": "Équipe",
+            "title": "Nos enseignants-chercheurs"
+          }
+        },
+        {
+          "id": "sec_d833e599e10749baa1a527ca535946a9",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "QUOTE",
+          "variant": "DARK",
+          "order": 9,
+          "dataFr": {
+            "quote": "Chaque ingénieur que nous formons repart avec une conviction simple : la forêt ne se protège qu'en la comprenant vraiment.",
+            "author": "Direction de l'ENSF",
+            "role": "Khenchela"
+          }
+        },
+        {
+          "id": "sec_831585cc6bdd46998ea955aa9dc7f7d6",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "PARTNERS",
+          "variant": "LIGHT",
+          "order": 10,
+          "dataFr": {
+            "title": "Nos partenaires institutionnels",
+            "logos": [
+              {
+                "name": "Direction Générale des Forêts"
+              },
+              {
+                "name": "Ministère de l'Enseignement Supérieur"
+              },
+              {
+                "name": "INRF"
+              },
+              {
+                "name": "Université de Batna 2"
+              }
+            ],
+            "imageCaption": "/photos/jury-soutenance.jpg"
+          }
+        },
+        {
+          "id": "sec_f8f861d9ed214b7183e4475be6874e26",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "CONTACT_CTA",
+          "variant": "DARK",
+          "order": 11,
+          "dataFr": {
+            "eyebrow": "Nous contacter",
+            "title": "Une question sur nos formations ou nos recherches ?",
+            "body": "Notre équipe se tient à votre disposition.",
+            "address": "Route de Batna, Khenchela 40000, Algérie",
+            "email": "contact@ensf-khenchela.dz",
+            "phone": "+213 32 00 00 00",
+            "imageCaption": "/photos/sortie-barrage.jpg"
+          }
+        }
+      ],
+      "createdAt": "2026-11-10T13:30:52.845Z",
+      "updatedAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "page_1921eb00d3964f71810ab4e85917b1db",
+      "slug": "a-propos",
+      "status": "PUBLISHED",
+      "titleFr": "À propos",
+      "sections": [
+        {
+          "id": "sec_4abb35f350e04e40b1018f068bf8928c",
+          "pageId": "page_1921eb00d3964f71810ab4e85917b1db",
+          "type": "EDITORIAL",
+          "variant": "LIGHT",
+          "order": 0,
+          "dataFr": {
+            "index": "01",
+            "eyebrow": "Depuis 1986",
+            "title": "L'École Nationale Supérieure des Forêts",
+            "body": "Implantée à Khenchela, au cœur du massif des Aurès, l'ENSF est l'unique établissement algérien entièrement consacré aux sciences forestières.\n\nElle forme des ingénieurs et des chercheurs capables d'agir sur l'ensemble des enjeux liés à la forêt : gestion durable, biodiversité, lutte contre l'érosion et les incendies, foresterie urbaine et changement climatique."
+          }
+        },
+        {
+          "id": "sec_c44a0438631f4dbcbe908ea214b3624a",
+          "pageId": "page_1921eb00d3964f71810ab4e85917b1db",
+          "type": "TIMELINE",
+          "variant": "LIGHT",
+          "order": 1,
+          "dataFr": {
+            "eyebrow": "Histoire",
+            "title": "Quelques repères",
+            "items": [
+              {
+                "year": "1986",
+                "title": "Création de l'école",
+                "body": "Ouverture de l'Institut puis de l'École Nationale Supérieure des Forêts à Khenchela."
+              },
+              {
+                "year": "1998",
+                "title": "Premiers laboratoires de recherche",
+                "body": "Structuration des équipes autour de l'écologie forestière et de la gestion des territoires."
+              },
+              {
+                "year": "2010",
+                "title": "Ouverture du cycle Master",
+                "body": "Lancement des spécialisations recherche et professionnelle."
+              },
+              {
+                "year": "2021",
+                "title": "Programme doctoral",
+                "body": "Accréditation du doctorat en sciences forestières."
+              }
+            ]
+          }
+        },
+        {
+          "id": "sec_afec8e0d837b4b8f8aec07947769edc3",
+          "pageId": "page_1921eb00d3964f71810ab4e85917b1db",
+          "type": "QUOTE",
+          "variant": "DARK",
+          "order": 2,
+          "dataFr": {
+            "quote": "Notre vocation est de transmettre un savoir scientifique rigoureux, au service direct des forêts algériennes.",
+            "author": "Direction des études"
+          }
+        }
+      ],
+      "createdAt": "2026-11-10T13:30:52.845Z",
+      "updatedAt": "2026-11-10T13:30:52.845Z",
+      "bannerImage": "/photos/sortie-barrage.jpg"
+    },
+    {
+      "id": "page_307e83987d934273bd3ea73bc999cd23",
+      "slug": "recherche",
+      "status": "PUBLISHED",
+      "titleFr": "Recherche",
+      "sections": [
+        {
+          "id": "sec_a57d993d8b58436793ba8121289bb82d",
+          "pageId": "page_307e83987d934273bd3ea73bc999cd23",
+          "type": "EDITORIAL",
+          "variant": "LIGHT",
+          "order": 0,
+          "dataFr": {
+            "index": "01",
+            "eyebrow": "Recherche",
+            "title": "Six laboratoires, un même terrain : la forêt algérienne",
+            "body": "Nos équipes conduisent des recherches sur l'écologie forestière, la gestion des risques naturels, la biodiversité et les usages socio-économiques de la forêt."
+          }
+        },
+        {
+          "id": "sec_0873b65886bb4ee497d85410f7eaf48d",
+          "pageId": "page_307e83987d934273bd3ea73bc999cd23",
+          "type": "CARD_GRID",
+          "variant": "LIGHT",
+          "order": 1,
+          "dataFr": {
+            "eyebrow": "Laboratoires",
+            "title": "Nos axes de recherche",
+            "cards": [
+              {
+                "tag": "Écologie",
+                "title": "Écologie et dynamique forestière",
+                "body": "Suivi des peuplements et de leur évolution face aux pressions climatiques.",
+                "imageCaption": "/photos/releves-etang.jpg"
+              },
+              {
+                "tag": "Risques",
+                "title": "Risques naturels",
+                "body": "Incendies, érosion des sols, cartographie des aléas.",
+                "imageCaption": "/photos/terrain-foret.jpg"
+              },
+              {
+                "tag": "Biodiversité",
+                "title": "Biodiversité et conservation",
+                "body": "Inventaires faunistiques et floristiques des massifs forestiers.",
+                "imageCaption": "/photos/champignon-terrain.jpg"
+              },
+              {
+                "tag": "Socio-économie",
+                "title": "Usages et territoires",
+                "body": "Relations entre populations locales et ressources forestières.",
+                "imageCaption": "/photos/sortie-barrage.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "id": "sec_89c5d1e2d986425d8d28fc5e66f1e615",
+          "pageId": "page_307e83987d934273bd3ea73bc999cd23",
+          "type": "PARTNERS",
+          "variant": "LIGHT",
+          "order": 2,
+          "dataFr": {
+            "title": "Partenaires scientifiques",
+            "logos": [
+              {
+                "name": "INRF"
+              },
+              {
+                "name": "Université de Batna 2"
+              },
+              {
+                "name": "CRSTRA"
+              }
+            ],
+            "imageCaption": "/photos/jury-soutenance.jpg"
+          }
+        }
+      ],
+      "createdAt": "2026-11-10T13:30:52.845Z",
+      "updatedAt": "2026-11-10T13:30:52.845Z",
+      "bannerImage": "/photos/champignon-terrain.jpg"
+    },
+    {
+      "id": "page_0a9a9b0cf68445b0aadd1cc9868c65ea",
+      "slug": "programmes",
+      "status": "PUBLISHED",
+      "titleFr": "Programmes",
+      "sections": [
+        {
+          "id": "sec_4ff46c3cffce428682efbeb691b112c1",
+          "pageId": "page_0a9a9b0cf68445b0aadd1cc9868c65ea",
+          "type": "EDITORIAL",
+          "variant": "LIGHT",
+          "order": 0,
+          "dataFr": {
+            "index": "01",
+            "eyebrow": "Formations",
+            "title": "De la licence au doctorat",
+            "body": "L'ENSF propose un continuum complet de formations en sciences forestières, articulé autour de la pratique de terrain et de la recherche."
+          }
+        },
+        {
+          "id": "sec_537920ca72014a16ab12fbc0dded5bb6",
+          "pageId": "page_0a9a9b0cf68445b0aadd1cc9868c65ea",
+          "type": "CARD_GRID",
+          "variant": "LIGHT",
+          "order": 1,
+          "dataFr": {
+            "eyebrow": "Cycles",
+            "title": "Nos quatre cycles",
+            "cards": [
+              {
+                "tag": "Licence",
+                "title": "Licence en écologie forestière",
+                "body": "Trois années de formation généraliste en sciences naturelles et forestières.",
+                "imageCaption": "/photos/releves-fougeres.jpg"
+              },
+              {
+                "tag": "Ingénieur",
+                "title": "Ingénieur d'État en sciences forestières",
+                "body": "La formation historique et phare de l'école.",
+                "imageCaption": "/photos/sortie-foret-garde.jpg"
+              },
+              {
+                "tag": "Master",
+                "title": "Master recherche et gestion forestière",
+                "body": "Deux parcours : recherche ou professionnel.",
+                "imageCaption": "/photos/labo-microscopes.jpg"
+              },
+              {
+                "tag": "Doctorat",
+                "title": "Doctorat en sciences forestières",
+                "body": "Recherche doctorale encadrée au sein de nos laboratoires.",
+                "imageCaption": "/photos/terrain-foret.jpg"
+              }
+            ]
+          }
+        }
+      ],
+      "createdAt": "2026-11-10T13:30:52.845Z",
+      "updatedAt": "2026-11-10T13:30:52.845Z",
+      "bannerImage": "/photos/sortie-foret-garde.jpg"
+    },
+    {
+      "id": "page_7014a4ec1b974fe7b0104ea20d9a3876",
+      "slug": "contact",
+      "status": "PUBLISHED",
+      "titleFr": "Contact",
+      "sections": [
+        {
+          "id": "sec_7b271413d48d4d0aac6c70195e898205",
+          "pageId": "page_7014a4ec1b974fe7b0104ea20d9a3876",
+          "type": "CONTACT_CTA",
+          "variant": "DARK",
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Nous contacter",
+            "title": "Parlons de votre projet d'études ou de recherche",
+            "body": "L'équipe administrative et pédagogique de l'ENSF vous répond.",
+            "address": "Route de Batna, Khenchela 40000, Algérie",
+            "email": "contact@ensf-khenchela.dz",
+            "phone": "+213 32 00 00 00",
+            "imageCaption": "/photos/visite-jardin.jpg"
+          }
+        },
+        {
+          "id": "sec_57e37eb1cee547e28734cdb2bb4ad7c7",
+          "pageId": "page_7014a4ec1b974fe7b0104ea20d9a3876",
+          "type": "EDITORIAL",
+          "variant": "LIGHT",
+          "order": 1,
+          "dataFr": {
+            "index": "02",
+            "eyebrow": "Informations pratiques",
+            "title": "Accès et horaires",
+            "body": "L'école est accessible depuis le centre-ville de Khenchela. Les services administratifs sont ouverts du dimanche au jeudi, de 8h à 16h."
+          }
+        }
+      ],
+      "createdAt": "2026-11-10T13:30:52.845Z",
+      "updatedAt": "2026-11-10T13:30:52.845Z",
+      "bannerImage": "/photos/allee-palmiers.jpg"
+    }
+  ],
+  "news": [
+    {
+      "id": "news_41dc8717e00d44d98e5a701e261d8005",
+      "slug": "campagne-reboisement-2026",
+      "status": "PUBLISHED",
+      "titleFr": "Lancement d'une nouvelle campagne de reboisement dans les Aurès",
+      "excerptFr": "Étudiants et enseignants de l'ENSF participent à une campagne de reboisement sur 40 hectares.",
+      "bodyFr": "L'ENSF a lancé une nouvelle campagne de reboisement en partenariat avec la Direction Générale des Forêts, sur une surface de 40 hectares dans le massif des Aurès.\n\nCette opération mobilise plusieurs promotions d'étudiants ingénieurs, encadrés par les enseignants du département d'écologie forestière.",
+      "coverImage": "/photos/serre-pepiniere.jpg",
+      "category": "Vie de l'école",
+      "publishedAt": "2026-11-10T13:30:52.845Z",
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "news_8711f819cfd2493f8984ecd6452ad44e",
+      "slug": "colloque-biodiversite-khenchela",
+      "status": "PUBLISHED",
+      "titleFr": "Colloque international sur la biodiversité forestière à Khenchela",
+      "excerptFr": "L'ENSF a accueilli des chercheurs de plusieurs pays méditerranéens autour de la conservation des forêts.",
+      "bodyFr": "Pendant trois jours, l'ENSF a réuni des chercheurs algériens, tunisiens et français autour des enjeux de conservation de la biodiversité forestière méditerranéenne.\n\nLes travaux ont porté sur le suivi des espèces menacées et la restauration des écosystèmes dégradés.",
+      "coverImage": "/photos/conference-amphi.jpg",
+      "category": "Recherche",
+      "publishedAt": "2026-10-29T13:30:52.971Z",
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "news_84e6232e06f14633a436150d2c2140e7",
+      "slug": "ouverture-inscriptions-master-2026",
+      "status": "PUBLISHED",
+      "titleFr": "Ouverture des inscriptions au Master recherche et gestion forestière",
+      "excerptFr": "Les inscriptions pour la rentrée 2026 du Master sont désormais ouvertes.",
+      "bodyFr": "Les candidatures pour la rentrée 2026 du Master recherche et gestion forestière sont ouvertes jusqu'au 30 septembre.\n\nLe programme propose deux parcours : recherche et professionnel, avec des stages encadrés par nos laboratoires partenaires.",
+      "coverImage": "/photos/etudiants-badges.jpg",
+      "category": "Admissions",
+      "publishedAt": "2026-10-16T13:30:52.971Z",
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    }
+  ],
+  "programs": [
+    {
+      "id": "prog_e26e4dc9ec0e4399ab5ce094318f3586",
+      "slug": "licence-ecologie-forestiere",
+      "cycle": "LICENCE",
+      "titleFr": "Licence en écologie forestière",
+      "summaryFr": "Trois années de formation généraliste.",
+      "durationFr": "3 ans",
+      "order": 0,
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "prog_ab98968f01e741c58397ef26bef72e6e",
+      "slug": "ingenieur-sciences-forestieres",
+      "cycle": "INGENIEUR",
+      "titleFr": "Ingénieur d'État en sciences forestières",
+      "summaryFr": "La formation historique de l'école.",
+      "durationFr": "5 ans",
+      "order": 1,
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "prog_c82d5f9232bf4e619facbc931bd582a8",
+      "slug": "master-recherche-gestion-forestiere",
+      "cycle": "MASTER",
+      "titleFr": "Master recherche et gestion forestière",
+      "summaryFr": "Deux parcours : recherche ou professionnel.",
+      "durationFr": "2 ans",
+      "order": 2,
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "prog_67327fd2a16b47eaa813df57045dce04",
+      "slug": "doctorat-sciences-forestieres",
+      "cycle": "DOCTORAT",
+      "titleFr": "Doctorat en sciences forestières",
+      "summaryFr": "Recherche doctorale encadrée.",
+      "durationFr": "3 à 5 ans",
+      "order": 3,
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    }
+  ],
+  "labs": [
+    {
+      "id": "lab_86a33677752a497188d0e5553e11ec1e",
+      "slug": "ecologie-dynamique-forestiere",
+      "nameFr": "Écologie et dynamique forestière",
+      "summaryFr": "Suivi des peuplements forestiers.",
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "lab_a8a4a67934da4f4ea0e3151bbca81d5b",
+      "slug": "risques-naturels",
+      "nameFr": "Risques naturels",
+      "summaryFr": "Incendies, érosion, cartographie des aléas.",
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    }
+  ],
+  "faculty": [
+    {
+      "id": "fac_90bb8118c0d34ff9bc5e1d99e7bde649",
+      "nameFr": "Pr. Amina Belkacem",
+      "titleFr": "Professeure, Écologie forestière",
+      "email": "a.belkacem@ensf-khenchela.dz",
+      "labId": "lab_86a33677752a497188d0e5553e11ec1e",
+      "order": 0,
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "fac_e0f457a4dc754238bcccbd7aed7cb49a",
+      "nameFr": "Dr. Yacine Haddad",
+      "titleFr": "Maître de conférences, Risques naturels",
+      "email": "y.haddad@ensf-khenchela.dz",
+      "labId": "lab_a8a4a67934da4f4ea0e3151bbca81d5b",
+      "order": 1,
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "fac_01f1bb7682c9448e8defb821503c8830",
+      "nameFr": "Dr. Sarah Meziane",
+      "titleFr": "Maîtresse de conférences, Biodiversité",
+      "email": "s.meziane@ensf-khenchela.dz",
+      "order": 2,
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "fac_a99778df437440cc8228fd91340fb829",
+      "nameFr": "Pr. Karim Boudiaf",
+      "titleFr": "Professeur, Gestion des territoires",
+      "email": "k.boudiaf@ensf-khenchela.dz",
+      "order": 3,
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc_21b94e3157664b30a9576d17c93f2b71",
+      "titleFr": "Règlement intérieur des étudiants",
+      "category": "Vie étudiante",
+      "fileUrl": "/documents/reglement-interieur.pdf",
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "id": "doc_8c851e0df16c46c9853b30a97f7a755c",
+      "titleFr": "Dossier d'inscription — Master 2026",
+      "category": "Admissions",
+      "fileUrl": "/documents/dossier-inscription-master.pdf",
+      "createdAt": "2026-11-10T13:30:52.845Z"
+    }
+  ],
+  "menu": [
+    {
+      "id": "menu_04db1f1454e0454fa6a14ea52a3008fa",
+      "labelFr": "Accueil",
+      "href": "",
+      "order": 0,
+      "parentId": null
+    },
+    {
+      "id": "menu_11b93ba87aaf41b2adcc447332c46b12",
+      "labelFr": "À propos",
+      "href": "/a-propos",
+      "order": 1,
+      "parentId": null
+    },
+    {
+      "id": "menu_62251ef4a653416988432397c1b18a94",
+      "labelFr": "Programmes",
+      "href": "/programmes",
+      "order": 2,
+      "parentId": null
+    },
+    {
+      "id": "menu_980865941dc74c0188655caee03ba396",
+      "labelFr": "Recherche",
+      "href": "/recherche",
+      "order": 3,
+      "parentId": null
+    },
+    {
+      "id": "menu_37cbe0854e114794a6cd5c19b64be255",
+      "labelFr": "Actualités",
+      "href": "/actualites",
+      "order": 4,
+      "parentId": null
+    },
+    {
+      "id": "menu_f9afb5b4d7964ce1bc9de99b8d40bfe7",
+      "labelFr": "Contact",
+      "href": "/contact",
+      "order": 5,
+      "parentId": null
+    }
+  ],
+  "media": []
+}
