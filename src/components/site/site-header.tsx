@@ -139,8 +139,8 @@ export default function SiteHeader({ locale, menu }: { locale: Locale; menu: Men
 
         <div className="main-nav">
           <Link className="identity" href={href("")} aria-label="ENSF Khenchela">
-            <span className="identity-logo">
-              <Image src="/logo-ensf.jpg" alt="" width={44} height={44} priority className="cover" />
+            <span className="identity-logo identity-logo--school">
+              <Image src="/logo-ensf.jpg" alt="HNSF — Higher National School of Forests" width={64} height={64} priority className="school-logo" />
             </span>
             <span>
               <b>ENSF</b>
@@ -237,8 +237,8 @@ export default function SiteHeader({ locale, menu }: { locale: Locale; menu: Men
       <div className={`mobile-menu ${mobile ? "is-open" : ""}`} aria-hidden={!mobile}>
         <div className="mobile-menu-top">
           <div className="identity">
-            <span className="identity-logo">
-              <Image src="/logo-ensf.jpg" alt="" width={44} height={44} className="cover" />
+            <span className="identity-logo identity-logo--school">
+              <Image src="/logo-ensf.jpg" alt="HNSF — Higher National School of Forests" width={64} height={64} className="school-logo" />
             </span>
             <span>
               <b>ENSF</b>

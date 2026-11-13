@@ -127,3 +127,6 @@ a.campus-resource:hover { background:var(--mint); }
 }
 .lightbox-controls { gap:8px; align-items:center; padding:12px 0 0; font-size:14px; }
 .lightbox-controls span { white-space:nowrap; }
+.identity-logo.identity-logo--school { width:64px; height:64px; flex-shrink:0; padding:4px; border-radius:8px; }
+.identity-logo--school .school-logo { width:100%; height:100%; object-fit:contain; }
+@media(max-width:760px) { .identity-logo.identity-logo--school { width:52px; height:52px; } }
