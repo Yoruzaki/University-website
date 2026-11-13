@@ -7,6 +7,9 @@ const DATA_FILE = path.join(DATA_DIR, "db.json");
 
 function emptyDb(): DB {
   return {
+    bulletins: [],
+    services: [],
+    events: [],
     users: [],
     pages: [],
     news: [],
@@ -32,24 +35,50 @@ function ensureFile() {
 export function readDb(): DB {
   ensureFile();
   const raw = fs.readFileSync(DATA_FILE, "utf-8");
-  try {
-    const parsed = JSON.parse(raw);
-    return { ...emptyDb(), ...parsed };
-  } catch {
-    return emptyDb();
+  const parsed = JSON.parse(raw);
+  if (!parsed || typeof parsed !== "object" || !Array.isArray(parsed.users)) {
+    throw new Error("Le fichier de contenu est invalide. Restaurez une sauvegarde.");
   }
+  return { ...emptyDb(), ...parsed };
 }
 
 export function writeDb(db: DB): void {
   ensureFile();
-  fs.writeFileSync(DATA_FILE, JSON.stringify(db, null, 2), "utf-8");
+  const temporary = DATA_FILE + "." + crypto.randomUUID() + ".tmp";
+  try {
+    fs.writeFileSync(temporary, JSON.stringify(db, null, 2), { encoding: "utf-8", flag: "wx" });
+    fs.copyFileSync(DATA_FILE, DATA_FILE + ".previous");
+    fs.renameSync(temporary, DATA_FILE);
+  } finally {
+    if (fs.existsSync(temporary)) fs.unlinkSync(temporary);
+  }
 }
 
 export function mutateDb<T>(fn: (db: DB) => T): T {
-  const db = readDb();
-  const result = fn(db);
-  writeDb(db);
-  return result;
+  ensureFile();
+  const lock = DATA_FILE + ".lock";
+  // The lock spans the complete read/modify/write operation across Node processes.
+  const deadline = Date.now() + 2000;
+  let handle: number;
+  for (;;) {
+    try {
+      handle = fs.openSync(lock, "wx");
+      break;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
+      if (Date.now() >= deadline) throw new Error("Enregistrement occupé. Réessayez dans quelques instants.");
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 25);
+    }
+  }
+  try {
+    const db = readDb();
+    const result = fn(db);
+    writeDb(db);
+    return result;
+  } finally {
+    fs.closeSync(handle);
+    fs.unlinkSync(lock);
+  }
 }
 
 export function newId(prefix = ""): string {

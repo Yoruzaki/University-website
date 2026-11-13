@@ -16,6 +16,9 @@ export default function SiteFooter({ locale }: { locale: Locale }) {
     { href: "/recherche", label: t(locale, "research") },
   ];
   const resources = [
+    { href: "/evenements", label: locale === "ar" ? "المواعيد" : locale === "en" ? "Events" : "Événements" },
+    { href: "/services", label: locale === "ar" ? "الخدمات الرقمية" : locale === "en" ? "Digital services" : "Services numériques" },
+    { href: "/vie-etudiante", label: locale === "ar" ? "الحياة الطلابية" : locale === "en" ? "Student life" : "Vie étudiante" },
     { href: "/actualites", label: t(locale, "newsEyebrow") },
     { href: "/contact", label: t(locale, "contactUs") },
     { href: "/search", label: t(locale, "search") },
@@ -95,17 +98,6 @@ export default function SiteFooter({ locale }: { locale: Locale }) {
                 {t(locale, "contactUs")}
               </Link>
             </p>
-            <div className="footer-social">
-              <a href="#" aria-label="LinkedIn">
-                in
-              </a>
-              <a href="#" aria-label="Facebook">
-                f
-              </a>
-              <a href="#" aria-label="YouTube">
-                ▶
-              </a>
-            </div>
           </div>
         </div>
 

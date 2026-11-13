@@ -1,0 +1,14 @@
+import Link from "next/link";
+import { getPublishedNews, localizedText } from "@/lib/content";
+import { SectionLabel, ArrowLink } from "@/components/ui/chrome";
+import { photoSrc } from "@/components/ui/photo";
+import { Rich } from "@/lib/rich";
+import { campusText, eventDate } from "@/lib/university";
+import type { Locale } from "@/lib/i18n";
+import type { NewsListData } from "./news-list";
+
+export default async function Newsroom({ data, n, locale }: { data: NewsListData; n: string; locale: Locale }) {
+  const items = await getPublishedNews(locale, Math.max(1, Math.min(data.count || 4, 12)));
+  const [lead, ...rest] = items;
+  return <section className="campus-section campus-newsroom" id="actualites"><div className="wrap"><SectionLabel n={n}>{data.eyebrow || "Actualités"}</SectionLabel><div className="campus-heading"><h2><Rich text={data.title || "Au cœur de *l’école.*"} /></h2><ArrowLink href={`/${locale}/actualites`}>{campusText(locale, "Toutes les actualités", "كل الأخبار", "All news")}</ArrowLink></div>{lead ? <div className="newsroom-grid"><Link className="newsroom-lead" href={`/${locale}/actualites/${lead.slug}`}><div className="newsroom-photo">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={photoSrc(lead.coverImage, { seed: lead.slug })} alt="" loading="lazy" /><span>{campusText(locale, "À la une", "في الواجهة", "In focus")}</span></div><div className="newsroom-lead-copy"><span className="campus-kicker">{lead.category} · <time dateTime={lead.publishedAt}>{eventDate(lead.publishedAt, locale)}</time></span><h3>{localizedText(lead, "title", locale)}</h3><p>{localizedText(lead, "excerpt", locale)}</p><span className="resource-bottom">{campusText(locale, "Lire l’article", "اقرأ المقال", "Read story")} <span aria-hidden="true">↗</span></span></div></Link><div className="newsroom-secondary">{rest.map((item, i) => <Link key={item.id} href={`/${locale}/actualites/${item.slug}`}><span className="newsroom-number">0{i + 2}</span><div><span className="campus-kicker">{item.category}</span><h3>{localizedText(item, "title", locale)}</h3><p>{localizedText(item, "excerpt", locale)}</p><time dateTime={item.publishedAt}>{eventDate(item.publishedAt, locale)}</time></div><span aria-hidden="true">↗</span></Link>)}<div className="newsroom-note"><span className="campus-kicker">ENSF / KHENCHELA</span><p>{campusText(locale, "La vie de l’école, sur le terrain et au-delà.", "حياة المدرسة في الميدان وما بعده", "Life at the school, in the field and beyond.")}</p><Link href={`/${locale}/evenements`}>{campusText(locale, "Consulter l’agenda →", "المواعيد ←", "Browse the agenda →")}</Link></div></div></div> : <p className="campus-lead">{campusText(locale, "Les actualités seront publiées ici.", "ستنشر الأخبار هنا", "News will appear here.")}</p>}</div></section>;
+}

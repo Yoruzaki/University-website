@@ -5,7 +5,7 @@ import Reveal from "@/components/ui/reveal";
 import PageBanner from "@/components/site/page-banner";
 import NewsCard from "@/components/site/news-card";
 import { SectionLabel, ArrowLink } from "@/components/ui/chrome";
-import { photoSrc, photoAlt } from "@/components/ui/photo";
+import ArticleGallery from "@/components/site/article-gallery";
 
 export default async function NewsDetail({
   params,
@@ -43,24 +43,15 @@ export default async function NewsDetail({
           <SectionLabel n="01">
             {item.category} · {t(loc, "publishedOn")} {dateLabel}
           </SectionLabel>
-          <div className="intro-grid">
-            <Reveal className="intro-visual">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={photoSrc(item.coverImage, { seed: item.slug, width: 1800 })} alt={photoAlt(item.coverImage, title)} />
-              <div className="image-caption">
-                <span>{t(loc, "illustration")}</span>
-                <p>{photoAlt(item.coverImage)}</p>
+          <div className="mt-8 flex flex-col gap-10">
+            <div className={item.layout === "reportage" ? "order-2" : ""}>
+              <div className="article-body mx-auto max-w-3xl">
+                {localizedText(item, "excerpt", loc) && <p className="text-xl font-medium">{localizedText(item, "excerpt", loc)}</p>}
+                {body.map((p, i) => <p key={i}>{p}</p>)}
               </div>
-            </Reveal>
-            <Reveal className="intro-copy" delay={120}>
-              <span className="chapter">ENSF / {item.category ?? t(loc, "newsEyebrow")}</span>
-              <div className="article-body mt-7">
-                {body.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-              <ArrowLink href={`/${loc}/actualites`}>{t(loc, "allNews")}</ArrowLink>
-            </Reveal>
+            </div>
+            {!!item.gallery?.length && <ArticleGallery photos={item.gallery} title={title} locale={loc} />}
+            <div className="order-last"><ArrowLink href={`/${loc}/actualites`}>{t(loc, "allNews")}</ArrowLink></div>
           </div>
         </div>
       </article>

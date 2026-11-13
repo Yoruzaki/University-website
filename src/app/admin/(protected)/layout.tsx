@@ -9,8 +9,8 @@ export default async function ProtectedAdminLayout({ children }: { children: Rea
   if (!session?.user) redirect("/admin/login");
 
   return (
-    <div className="flex min-h-screen">
-      <aside className="sticky top-0 flex h-screen w-72 shrink-0 flex-col justify-between bg-forest-800 px-7 py-8 text-white">
+    <div className="admin-shell flex min-h-screen">
+      <aside className="admin-sidebar sticky top-0 flex h-screen w-72 shrink-0 flex-col justify-between bg-forest-800 px-7 py-8 text-white">
         <div>
           <Link href="/admin" className="identity mb-12">
             <span className="identity-logo">

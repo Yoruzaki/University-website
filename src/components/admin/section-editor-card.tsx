@@ -1,6 +1,6 @@
 import type { Section } from "@/lib/db/types";
 import { sectionLibrary } from "@/components/sections/registry";
-import SectionFields from "./section-fields";
+import SectionContentFields from "./section-content-fields";
 import {
   updateSectionFieldsAction,
   deleteSectionAction,
@@ -32,7 +32,7 @@ export default function SectionEditorCard({
             {String(position + 1).padStart(2, "0")}
           </span>
           <div>
-            <p className="font-[var(--display)] text-[15px] font-semibold text-navy">{meta?.label ?? section.type}</p>
+            <p className="font-[var(--display)] text-[15px] font-semibold text-navy">{meta?.label ?? section.type}{section.hidden ? " · Masquée" : ""}</p>
             <p className="mt-0.5 text-xs text-ink-text-muted">{meta?.description}</p>
           </div>
         </div>
@@ -85,7 +85,8 @@ export default function SectionEditorCard({
             </select>
           </div>
 
-          <SectionFields section={section} />
+          <label className="flex items-center gap-3 text-sm"><input type="checkbox" name="hidden" defaultChecked={section.hidden} /> Masquer cette section sur le site</label>
+          <SectionContentFields section={section} />
 
           <button
             type="submit"

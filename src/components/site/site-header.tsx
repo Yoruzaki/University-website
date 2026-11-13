@@ -28,10 +28,13 @@ function ServiceLink({
   children?: React.ReactNode;
   tabIndex?: number;
 }) {
-  const url = SITE_LINKS[service];
+  const currentPath = usePathname();
+  const locale = currentPath.split("/")[1] || "fr";
+  const destinations = { studentSpace: `/${locale}/scolarite`, eLearning: `/${locale}/services#elearning`, library: `/${locale}/services#bibliotheque` };
+  const url = SITE_LINKS[service] || destinations[service];
   if (url) {
     return (
-      <a href={url} target="_blank" rel="noopener noreferrer" className={className} tabIndex={tabIndex}>
+      <a href={url} target={url.startsWith("http") ? "_blank" : undefined} rel={url.startsWith("http") ? "noopener noreferrer" : undefined} className={className} tabIndex={tabIndex}>
         {children ?? label}
       </a>
     );

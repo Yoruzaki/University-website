@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllPages, getAllNews, getAllPrograms, getAllFaculty } from "@/lib/content";
 import { Icon } from "@/components/ui/chrome";
+import { events, services } from "@/lib/university";
 
 export default async function AdminHome() {
   const [pages, news, programs, faculty] = await Promise.all([
@@ -14,6 +15,8 @@ export default async function AdminHome() {
   const newsDrafts = news.filter((n) => n.status === "DRAFT");
 
   const stats = [
+    { label: "Événements", value: events(true).length, href: "/admin/events", note: "Agenda, dates, lieux et inscriptions" },
+    { label: "Services numériques", value: services(true).length, href: "/admin/services", note: "E-learning, bibliothèque, DSpace, EDX…" },
     { label: "Pages", value: pages.length, href: "/admin/pages", note: `${drafts.length} brouillon(s)` },
     { label: "Actualités", value: news.length, href: "/admin/news", note: `${newsDrafts.length} brouillon(s)` },
     { label: "Programmes", value: programs.length, href: "/admin/programs", note: "Offre de formation" },
@@ -21,28 +24,32 @@ export default async function AdminHome() {
   ];
 
   const actions = [
-    { label: "Nouvelle page", href: "/admin/pages/new" },
-    { label: "Nouvel article", href: "/admin/news/new" },
-    { label: "Modifier le menu", href: "/admin/menu" },
-  ];
+    { label: "Actualité", note: "Rédiger un article ou un reportage photo.", href: "/admin/news/new" },
+    { label: "Événement", note: "Programmer une date et préciser le lieu.", href: "/admin/events#event-form" },
+    { label: "Annonce importante", note: "Diffuser un avis à la communauté.", href: "/admin/bulletins/annonces" },
+    { label: "Opportunité", note: "Partager une bourse, un stage ou un appel.", href: "/admin/bulletins/opportunites" },  ];
 
   return (
     <div>
       <p className="a-kicker">Tableau de bord</p>
       <div className="flex flex-wrap items-end justify-between gap-8">
         <h1 className="a-title !text-[clamp(2.4rem,4vw,3.75rem)]">
-          Le contenu du site,
-          <br />
-          <em>en un coup d&apos;œil.</em>
+          Que souhaitez-vous publier ?
         </h1>
-        <div className="flex flex-wrap gap-2">
-          {actions.map((a, i) => (
-            <Link key={a.href} href={a.href} className={`a-btn ${i === 0 ? "a-btn-primary" : "a-btn-ghost"}`}>
-              {a.label}
-              <Icon name="arrow" size={15} />
+        <div className="grid w-full gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          {actions.map(a => (
+            <Link key={a.href} href={a.href} className="a-card p-5 transition-shadow hover:shadow-md">
+              <strong className="flex items-center justify-between gap-2 text-lg">{a.label}<Icon name="arrow" size={16} /></strong>
+              <span className="mt-2 block text-sm">{a.note}</span>
             </Link>
-          ))}
-        </div>
+          ))}        </div>
+      </div>
+
+      <div className="mt-10 grid gap-4 md:grid-cols-3">
+        {[['', 'Accueil', 'Actualités, événements, plateformes et ordre des sections.'], ['vie-etudiante', 'Vie étudiante', 'Clubs, campus, accompagnement et activités.'], ['scolarite', 'Scolarité', 'Emplois du temps, examens et ressources.']].map(([slug, title, note]) => {
+          const page = pages.find((p) => p.slug === slug);
+          return page && <Link key={slug} href={`/admin/pages/${page.id}`} className="a-card p-5"><strong className="text-lg">{title} ↗</strong><p className="mt-2 text-xs leading-relaxed text-ink-text-muted">{note}</p><span className="mt-4 block text-xs">{page.sections.length} sections modifiables</span></Link>;
+        })}
       </div>
 
       <div className="mt-14 border-t border-[var(--rule)]">

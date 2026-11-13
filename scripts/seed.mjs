@@ -1,11 +1,15 @@
 // Seeds data/db.json with a realistic starting point for ENSF Khenchela:
 // an admin account, the main navigation, a handful of fully built pages,
-// and sample news/programs/faculty/documents. Safe to re-run — it
-// overwrites data/db.json each time. Edit by hand or, better, through
+// and sample news/programs/faculty/documents. Only for an empty installation. It
+// creates data/db.json. Existing databases are protected. Edit through
 // the admin dashboard once the site is running.
 import bcrypt from "bcryptjs";
 import fs from "node:fs";
 import path from "node:path";
+
+if (fs.existsSync(path.join(process.cwd(), "data", "db.json"))) {
+  throw new Error("Une base existe déjà. La commande seed est réservée à une installation vide.");
+}
 
 const now = new Date().toISOString();
 const id = (p) => `${p}_${crypto.randomUUID().replace(/-/g, "")}`;

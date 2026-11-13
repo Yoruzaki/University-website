@@ -10,7 +10,7 @@ export default async function PageRenderer({ slug, locale }: { slug: string; loc
   const page = await getPublishedPageBySlug(slug);
   if (!page) notFound();
 
-  const sections = [...page.sections].sort((a, b) => a.order - b.order);
+  const sections = page.sections.filter((s) => !s.hidden).sort((a, b) => a.order - b.order);
   const startsWithHero = sections[0]?.type === "HERO";
 
   // Number every section after the hero: 01, 02, 03 … (the design's section labels)

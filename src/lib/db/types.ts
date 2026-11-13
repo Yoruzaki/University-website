@@ -20,6 +20,11 @@ export interface User {
 export type PageStatus = "DRAFT" | "PUBLISHED";
 
 export type SectionType =
+  | "ANNOUNCEMENTS"
+  | "OPPORTUNITIES"
+  | "RESOURCE_GRID"
+  | "SERVICE_GRID"
+  | "EVENTS_LIST"
   | "HERO"
   | "EDITORIAL"
   | "STATS"
@@ -38,6 +43,7 @@ export type SectionType =
 export type SectionVariant = "LIGHT" | "DARK";
 
 export interface Section {
+  hidden?: boolean;
   id: string;
   pageId: string;
   type: SectionType;
@@ -66,6 +72,9 @@ export interface Page {
 }
 
 export interface NewsItem {
+  gallery?: string[];
+  layout?: "article" | "reportage";
+  featured?: boolean;
   id: string;
   slug: string;
   status: PageStatus;
@@ -155,6 +164,9 @@ export interface Media {
 }
 
 export interface DB {
+  bulletins: Bulletin[];
+  services: DigitalService[];
+  events: UniversityEvent[];
   users: User[];
   pages: Page[];
   news: NewsItem[];
@@ -164,4 +176,57 @@ export interface DB {
   documents: DocumentFile[];
   menu: MenuItem[];
   media: Media[];
+}
+
+export interface Bulletin {
+  id: string;
+  kind: "annonces" | "opportunites";
+  titleFr: string;
+  titleAr?: string;
+  titleEn?: string;
+  summaryFr: string;
+  summaryAr?: string;
+  summaryEn?: string;
+  category: string;
+  audience: string;
+  url: string;
+  deadline?: string;
+  featured: boolean;
+  status: PageStatus;
+  publishedAt: string;
+}
+
+export interface DigitalService {
+  id: string;
+  titleFr: string;
+  titleAr?: string;
+  titleEn?: string;
+  summaryFr?: string;
+  summaryAr?: string;
+  summaryEn?: string;
+  url: string;
+  category: string;
+  enabled: boolean;
+  order: number;
+}
+
+export interface UniversityEvent {
+  id: string;
+  slug: string;
+  titleFr: string;
+  titleAr?: string;
+  titleEn?: string;
+  summaryFr?: string;
+  summaryAr?: string;
+  summaryEn?: string;
+  bodyFr?: string;
+  category: string;
+  location: string;
+  startsAt: string;
+  endsAt?: string;
+  registrationUrl?: string;
+  coverImage?: string;
+  status: PageStatus;
+  featured: boolean;
+  createdAt: string;
 }

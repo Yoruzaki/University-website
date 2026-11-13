@@ -16,6 +16,7 @@ export default function AdminLoginPage() {
   function handleSubmit(formData: FormData) {
     setError(null);
     startTransition(async () => {
+      try {
       const res = await signIn("credentials", {
         email: formData.get("email"),
         password: formData.get("password"),
@@ -26,6 +27,9 @@ export default function AdminLoginPage() {
       } else {
         router.push("/admin");
         router.refresh();
+      }
+      } catch {
+        setError("La connexion a échoué. Réessayez dans quelques instants.");
       }
     });
   }

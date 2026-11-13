@@ -2,8 +2,9 @@ import Link from "next/link";
 import { getAllNews } from "@/lib/content";
 import { deleteNewsAction as deleteAction } from "@/lib/actions";
 
-export default async function NewsListAdmin() {
+export default async function NewsListAdmin({ searchParams }: { searchParams: Promise<{ saved?: string }> }) {
   const items = await getAllNews();
+  const { saved } = await searchParams;
   return (
     <div>
       <p className="a-kicker">Contenu</p>
@@ -15,6 +16,8 @@ export default async function NewsListAdmin() {
           + Nouvel article
         </Link>
       </div>
+      {saved === "1" && <p role="status" className="admin-success">La publication a été enregistrée.</p>}
+      {!items.length && <p className="a-card mt-8 p-6">Aucune actualité. Créez votre premier article pour commencer.</p>}
       <table className="a-table mt-8">
         <thead>
           <tr className="border-b border-ink-text/10 text-xs uppercase tracking-wide text-ink-text-muted">
@@ -36,6 +39,7 @@ export default async function NewsListAdmin() {
               </td>
               <td className="py-3 text-right">
                 <Link href={`/admin/news/${n.id}`} className="a-link me-4">Modifier</Link>
+                {n.status === "PUBLISHED" && <Link href={`/fr/actualites/${n.slug}`} className="a-link me-4">Voir</Link>}
                 <form action={deleteAction.bind(null, n.id)} className="inline">
                   <button type="submit" className="a-btn-danger">Supprimer</button>
                 </form>

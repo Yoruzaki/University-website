@@ -16,7 +16,8 @@ import type { Locale } from "@/lib/i18n";
 export function pick(obj: object, field: string, locale: Locale): unknown {
   const suffix = locale === "fr" ? "Fr" : locale === "ar" ? "Ar" : "En";
   const record = obj as Record<string, unknown>;
-  return record[`${field}${suffix}`] ?? record[`${field}Fr`];
+  const value = record[`${field}${suffix}`];
+  return value === "" || value == null ? record[`${field}Fr`] : value;
 }
 
 export function localizedText(obj: object, field: string, locale: Locale): string {
@@ -136,7 +137,7 @@ export async function addSection(
 export async function updateSection(
   pageId: string,
   sectionId: string,
-  patch: Partial<Pick<Section, "variant" | "dataFr" | "dataAr" | "dataEn">>
+  patch: Partial<Pick<Section, "variant" | "dataFr" | "dataAr" | "dataEn" | "hidden">>
 ): Promise<void> {
   mutateDb((db) => {
     const page = db.pages.find((p) => p.id === pageId);
@@ -180,7 +181,7 @@ export async function getPublishedNews(locale: Locale, limit?: number): Promise<
   const db = readDb();
   const items = db.news
     .filter((n) => n.status === "PUBLISHED")
-    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt));
+    .sort((a, b) => Number(!!b.featured) - Number(!!a.featured) || +new Date(b.publishedAt) - +new Date(a.publishedAt));
   return limit ? items.slice(0, limit) : items;
 }
 
@@ -196,16 +197,18 @@ export async function getAllNews(): Promise<NewsItem[]> {
 
 export async function upsertNews(item: Partial<NewsItem> & { id?: string }): Promise<NewsItem> {
   return mutateDb((db) => {
+    if (db.news.some(n => n.slug === item.slug && n.id !== item.id)) throw new Error("Adresse déjà utilisée.");
     if (item.id) {
       const existing = db.news.find((n) => n.id === item.id);
       if (existing) {
         Object.assign(existing, item);
         return existing;
       }
+      throw new Error("Publication supprimée.");
     }
     const now = new Date().toISOString();
     const created: NewsItem = {
-      id: newId("news"),
+
       slug: item.slug ?? newId(),
       status: item.status ?? "DRAFT",
       titleFr: item.titleFr ?? "Sans titre",
@@ -216,6 +219,7 @@ export async function upsertNews(item: Partial<NewsItem> & { id?: string }): Pro
       publishedAt: item.publishedAt ?? now,
       createdAt: now,
       ...item,
+      id: newId("news"),
     };
     db.news.push(created);
     return created;
@@ -251,13 +255,14 @@ export async function upsertProgram(item: Partial<Program> & { id?: string }): P
       }
     }
     const created: Program = {
-      id: newId("prog"),
+
       slug: item.slug ?? newId(),
       cycle: item.cycle ?? "LICENCE",
       titleFr: item.titleFr ?? "Sans titre",
       order: item.order ?? db.programs.length,
       createdAt: new Date().toISOString(),
       ...item,
+      id: newId("prog"),
     };
     db.programs.push(created);
     return created;
@@ -294,11 +299,12 @@ export async function upsertFaculty(
       }
     }
     const created: FacultyMember = {
-      id: newId("fac"),
+
       nameFr: item.nameFr ?? "Sans nom",
       order: item.order ?? db.faculty.length,
       createdAt: new Date().toISOString(),
       ...item,
+      id: newId("fac"),
     };
     db.faculty.push(created);
     return created;
@@ -330,11 +336,12 @@ export async function upsertDocument(
       }
     }
     const created: DocumentFile = {
-      id: newId("doc"),
+
       titleFr: item.titleFr ?? "Document",
       fileUrl: item.fileUrl ?? "#",
       createdAt: new Date().toISOString(),
       ...item,
+      id: newId("doc"),
     };
     db.documents.push(created);
     return created;
@@ -359,12 +366,13 @@ export async function upsertMenuItem(item: Partial<MenuItem> & { id?: string }):
       }
     }
     const created: MenuItem = {
-      id: newId("menu"),
+
       labelFr: item.labelFr ?? "Lien",
       href: item.href ?? "/",
       order: item.order ?? db.menu.length,
       parentId: item.parentId ?? null,
       ...item,
+      id: newId("menu"),
     };
     db.menu.push(created);
     return created;

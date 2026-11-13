@@ -1,4 +1,98 @@
 {
+  "bulletins": [],
+  "services": [
+    {
+      "id": "elearning",
+      "titleFr": "E-learning",
+      "titleAr": "التعليم الإلكتروني",
+      "titleEn": "E-learning",
+      "summaryFr": "Cours, supports pédagogiques et activités d’apprentissage en ligne.",
+      "category": "Pédagogie",
+      "url": "",
+      "enabled": true,
+      "order": 0
+    },
+    {
+      "id": "bibliotheque",
+      "titleFr": "Bibliothèque",
+      "titleAr": "المكتبة",
+      "titleEn": "Library",
+      "summaryFr": "Catalogue, horaires, services de prêt et ressources documentaires.",
+      "category": "Documentation",
+      "url": "",
+      "enabled": true,
+      "order": 1
+    },
+    {
+      "id": "dspace",
+      "titleFr": "DSpace",
+      "titleAr": "المستودع الرقمي",
+      "titleEn": "DSpace",
+      "summaryFr": "Mémoires, thèses et publications scientifiques de l’établissement.",
+      "category": "Recherche",
+      "url": "",
+      "enabled": true,
+      "order": 2,
+      "summaryAr": "",
+      "summaryEn": ""
+    },
+    {
+      "id": "edx",
+      "titleFr": "EDX / MOOC",
+      "titleAr": "دورات مفتوحة",
+      "titleEn": "EDX / MOOCs",
+      "summaryFr": "Formations ouvertes et cours en ligne pour développer vos compétences.",
+      "category": "Formation",
+      "url": "",
+      "enabled": true,
+      "order": 3
+    },
+    {
+      "id": "sndl",
+      "titleFr": "SNDL",
+      "titleAr": "المكتبة العلمية الرقمية",
+      "titleEn": "SNDL",
+      "summaryFr": "Accès aux ressources scientifiques et aux bases de données documentaires.",
+      "category": "Recherche",
+      "url": "",
+      "enabled": true,
+      "order": 4
+    },
+    {
+      "id": "progres",
+      "titleFr": "PROGRES / Espace étudiant",
+      "titleAr": "فضاء الطالب",
+      "titleEn": "Student portal",
+      "summaryFr": "Accès aux services de scolarité et au suivi du parcours universitaire.",
+      "category": "Scolarité",
+      "url": "",
+      "enabled": true,
+      "order": 5
+    },
+    {
+      "id": "messagerie",
+      "titleFr": "Messagerie institutionnelle",
+      "titleAr": "البريد الإلكتروني",
+      "titleEn": "Institutional email",
+      "summaryFr": "La messagerie de la communauté universitaire.",
+      "category": "Communication",
+      "url": "",
+      "enabled": true,
+      "order": 6
+    },
+    {
+      "id": "recherche",
+      "titleFr": "Portail de la recherche",
+      "titleAr": "بوابة البحث",
+      "titleEn": "Research portal",
+      "summaryFr": "Projets, ressources et outils au service des enseignants-chercheurs.",
+      "category": "Recherche",
+      "url": "",
+      "enabled": true,
+      "order": 7
+    }
+  ],
+  "events": [],
   "users": [
     {
       "id": "user_398f6c9e04544834a6837d84d374d6f3",
@@ -33,52 +127,156 @@
           }
         },
         {
-          "id": "sec_845a2e11098a43d18c3a77707cee8a12",
-          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
-          "type": "EDITORIAL",
+          "id": "sec_4deca3830bcf4ca9a442d2c1d9d40305",
+          "type": "ANNOUNCEMENTS",
           "variant": "LIGHT",
+          "hidden": false,
           "order": 1,
           "dataFr": {
-            "index": "02",
-            "eyebrow": "Notre mission",
-            "title": "Une école tournée vers la forêt, la biodiversité et la recherche",
-            "body": "L'ENSF Khenchela forme des ingénieurs forestiers capables de comprendre, gérer et protéger les écosystèmes forestiers algériens, du littoral aux hauts plateaux.\n\nNos enseignements associent sciences naturelles, gestion des territoires et recherche appliquée, en lien étroit avec la Direction Générale des Forêts et les acteurs du développement rural."
+            "title": "Les informations *à retenir.*",
+            "eyebrow": "Annonces importantes",
+            "intro": "Inscriptions, examens et informations pratiques : les avis essentiels de l’école.",
+            "count": 3
+          },
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1"
+        },
+        {
+          "id": "sec_48c9e428bca545798d24b490fe1ba380",
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
+          "type": "NEWS_LIST",
+          "variant": "LIGHT",
+          "order": 2,
+          "dataFr": {
+            "eyebrow": "Actualités",
+            "title": "Au cœur de *l’école.*",
+            "count": 4
           }
         },
         {
-          "id": "sec_2afa4b09605c4c6fb53c8b06f5337e4d",
-          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
-          "type": "STATS",
-          "variant": "DARK",
-          "order": 2,
+          "id": "sec_001fc4c2526840fda4a25e480470250e",
+          "type": "EVENTS_LIST",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 3,
           "dataFr": {
-            "eyebrow": "L'école en chiffres",
+            "eyebrow": "À vos agendas",
+            "title": "Les prochains *rendez-vous.*",
+            "count": 3
+          },
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1"
+        },
+        {
+          "id": "sec_d1bbe86eea724e5b9a55fe33f5a9479b",
+          "type": "OPPORTUNITIES",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 4,
+          "dataFr": {
+            "title": "De nouvelles *perspectives.*",
+            "eyebrow": "Opportunités",
+            "intro": "Bourses, stages, concours et appels à candidatures pour préparer la suite.",
+            "count": 3
+          },
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1"
+        },
+        {
+          "id": "sec_263d42778e3b43c7b871b14996cce127",
+          "type": "SERVICE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 5,
+          "dataFr": {
+            "eyebrow": "Le campus connecté",
+            "title": "Un accès direct à *vos ressources.*",
+            "intro": "Apprendre, rechercher, échanger : les plateformes de votre quotidien universitaire."
+          },
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1"
+        },
+        {
+          "id": "sec_c4e3f015a07a4d0da68045361e9fc64e",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 6,
+          "dataFr": {
+            "eyebrow": "Repères étudiants",
+            "title": "L’essentiel, *sans détour.*",
+            "intro": "Les informations à retrouver facilement tout au long de l’année.",
             "items": [
               {
-                "value": "38 ans",
-                "label": "d'existence"
+                "tag": "Candidater",
+                "title": "Admissions",
+                "body": "Préparer votre dossier et votre arrivée.",
+                "href": "/admissions"
               },
               {
-                "value": "1200+",
-                "label": "diplômés en activité"
+                "tag": "S’organiser",
+                "title": "Scolarité",
+                "body": "Emplois du temps, examens et démarches.",
+                "href": "/scolarite"
               },
               {
-                "value": "6",
-                "label": "laboratoires de recherche"
+                "tag": "Se documenter",
+                "title": "Documents",
+                "body": "Guides et formulaires de l’école.",
+                "href": "/documents"
               },
               {
-                "value": "4",
-                "label": "cycles de formation"
+                "tag": "Explorer",
+                "title": "Recherche",
+                "body": "Ressources et vie scientifique.",
+                "href": "/recherche/ressources"
               }
             ]
-          }
+          },
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1"
+        },
+        {
+          "id": "sec_9fad88c99e444becbcefedd076455791",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 7,
+          "dataFr": {
+            "eyebrow": "Vie étudiante",
+            "title": "Bien plus que *des études.*",
+            "intro": "Des rencontres, des initiatives et un campus à vivre au quotidien.",
+            "items": [
+              {
+                "tag": "Communauté",
+                "title": "Clubs & associations",
+                "body": "S’investir, partager et faire grandir ses idées.",
+                "href": "/vie-etudiante/clubs"
+              },
+              {
+                "tag": "Terrain",
+                "title": "Apprendre autrement",
+                "body": "Découvrir la forêt, observer et expérimenter.",
+                "href": "/vie-etudiante/terrain"
+              },
+              {
+                "tag": "Campus",
+                "title": "Sport & culture",
+                "body": "Trouver sa place dans la vie du campus.",
+                "href": "/vie-etudiante/sport-culture"
+              },
+              {
+                "tag": "Accompagnement",
+                "title": "Votre quotidien",
+                "body": "Informations pratiques et accompagnement étudiant.",
+                "href": "/vie-etudiante/vie-pratique"
+              }
+            ],
+            "image": "/photos/etudiants-badges.jpg"
+          },
+          "pageId": "page_1feaecf3c7804019a3000ea32167dff1"
         },
         {
           "id": "sec_e118eb8b1bdd4330a78f62142d2f626d",
           "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
           "type": "PHOTO_STORY",
           "variant": "DARK",
-          "order": 3,
+          "order": 8,
           "dataFr": {
             "eyebrow": "Recherche appliquée",
             "title": "Comprendre la forêt pour mieux la protéger",
@@ -95,7 +293,7 @@
           "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
           "type": "CARD_GRID",
           "variant": "LIGHT",
-          "order": 4,
+          "order": 9,
           "dataFr": {
             "eyebrow": "Formations",
             "title": "Quatre cycles, un même terrain d'étude : la forêt",
@@ -133,186 +331,15 @@
           }
         },
         {
-          "id": "sec_66e1be35f7524b7fa9f3bd4ddd3027e8",
-          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
-          "type": "RESEARCH_SPOTLIGHT",
-          "variant": "LIGHT",
-          "order": 5,
-          "dataFr": {
-            "eyebrow": "À la une de la recherche",
-            "title": "Cartographier la résilience des subéraies algériennes face au changement climatique",
-            "body": "Un programme pluriannuel associant télédétection, inventaires de terrain et modélisation pour anticiper l'évolution des chênaies-lièges.",
-            "imageCaption": "/photos/releves-gps-pins.jpg",
-            "statValue": "14",
-            "statLabel": "projets de recherche en cours",
-            "ctaLabel": "En savoir plus",
-            "ctaHref": "/recherche"
-          }
-        },
-        {
-          "id": "sec_48c9e428bca545798d24b490fe1ba380",
-          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
-          "type": "NEWS_LIST",
-          "variant": "LIGHT",
-          "order": 6,
-          "dataFr": {
-            "eyebrow": "Actualités",
-            "title": "L'actualité de l'école",
-            "count": 3
-          }
-        },
-        {
-          "id": "sec_gallery_vie_universitaire",
-          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
-          "type": "GALLERY",
-          "variant": "LIGHT",
-          "order": 7,
-          "dataFr": {
-            "eyebrow": "Vie universitaire",
-            "title": "Une expérience qui *va au-delà des salles de cours.*",
-            "intro": "Apprendre ensemble, expérimenter au laboratoire et sur le terrain, et s'engager pour la nature.",
-            "ctaLabel": "Découvrir l'école",
-            "ctaHref": "/fr/a-propos",
-            "images": [
-              {
-                "src": "/photos/salle-informatique.jpg",
-                "caption": "Apprendre / Partager — salle informatique"
-              },
-              {
-                "src": "/photos/bibliotheque-livres.jpg",
-                "caption": "Lire / Chercher — bibliothèque"
-              },
-              {
-                "src": "/photos/tp-laboratoire.jpg",
-                "caption": "Expérimenter / Innover — travaux pratiques"
-              },
-              {
-                "src": "/photos/salle-langues.jpg",
-                "caption": "Centre d'enseignement intensif des langues"
-              },
-              {
-                "src": "/photos/labo-equipement.jpg",
-                "caption": "Équipements de laboratoire"
-              },
-              {
-                "src": "/photos/tp-laboratoire-2.jpg",
-                "caption": "Séance de travaux pratiques"
-              }
-            ]
-          },
-          "dataAr": {
-            "eyebrow": "الحياة الجامعية",
-            "title": "تجربة *تتجاوز قاعات الدرس.*",
-            "intro": "نتعلم معًا، نجرّب في المخبر وفي الميدان، ونلتزم من أجل الطبيعة.",
-            "ctaLabel": "اكتشف المدرسة",
-            "ctaHref": "/ar/a-propos",
-            "images": [
-              {
-                "src": "/photos/salle-informatique.jpg",
-                "caption": "قاعة الإعلام الآلي"
-              },
-              {
-                "src": "/photos/bibliotheque-livres.jpg",
-                "caption": "المكتبة"
-              },
-              {
-                "src": "/photos/tp-laboratoire.jpg",
-                "caption": "الأعمال التطبيقية"
-              },
-              {
-                "src": "/photos/salle-langues.jpg",
-                "caption": "مركز التعليم المكثف للغات"
-              },
-              {
-                "src": "/photos/labo-equipement.jpg",
-                "caption": "تجهيزات المخبر"
-              },
-              {
-                "src": "/photos/tp-laboratoire-2.jpg",
-                "caption": "حصة أعمال تطبيقية"
-              }
-            ]
-          },
-          "dataEn": {
-            "eyebrow": "Campus life",
-            "title": "An experience that *goes beyond the classroom.*",
-            "intro": "Learning together, experimenting in the lab and in the field, and standing up for nature.",
-            "ctaLabel": "Discover the school",
-            "ctaHref": "/en/a-propos",
-            "images": [
-              {
-                "src": "/photos/salle-informatique.jpg",
-                "caption": "Learn / Share — computer room"
-              },
-              {
-                "src": "/photos/bibliotheque-livres.jpg",
-                "caption": "Read / Search — library"
-              },
-              {
-                "src": "/photos/tp-laboratoire.jpg",
-                "caption": "Experiment / Innovate — practical work"
-              },
-              {
-                "src": "/photos/salle-langues.jpg",
-                "caption": "Intensive language teaching centre"
-              },
-              {
-                "src": "/photos/labo-equipement.jpg",
-                "caption": "Laboratory equipment"
-              },
-              {
-                "src": "/photos/tp-laboratoire-2.jpg",
-                "caption": "Practical session"
-              }
-            ]
-          }
-        },
-        {
-          "id": "sec_fd83c4494b554c43b1465e22b70b0358",
-          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
-          "type": "FACULTY_GRID",
-          "variant": "LIGHT",
-          "order": 8,
-          "dataFr": {
-            "eyebrow": "Équipe",
-            "title": "Nos enseignants-chercheurs"
-          }
-        },
-        {
           "id": "sec_d833e599e10749baa1a527ca535946a9",
           "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
           "type": "QUOTE",
           "variant": "DARK",
-          "order": 9,
+          "order": 10,
           "dataFr": {
             "quote": "Chaque ingénieur que nous formons repart avec une conviction simple : la forêt ne se protège qu'en la comprenant vraiment.",
             "author": "Direction de l'ENSF",
             "role": "Khenchela"
-          }
-        },
-        {
-          "id": "sec_831585cc6bdd46998ea955aa9dc7f7d6",
-          "pageId": "page_1feaecf3c7804019a3000ea32167dff1",
-          "type": "PARTNERS",
-          "variant": "LIGHT",
-          "order": 10,
-          "dataFr": {
-            "title": "Nos partenaires institutionnels",
-            "logos": [
-              {
-                "name": "Direction Générale des Forêts"
-              },
-              {
-                "name": "Ministère de l'Enseignement Supérieur"
-              },
-              {
-                "name": "INRF"
-              },
-              {
-                "name": "Université de Batna 2"
-              }
-            ],
-            "imageCaption": "/photos/jury-soutenance.jpg"
           }
         },
         {
@@ -586,6 +613,955 @@
       "createdAt": "2026-11-10T13:30:52.845Z",
       "updatedAt": "2026-11-10T13:30:52.845Z",
       "bannerImage": "/photos/allee-palmiers.jpg"
+    },
+    {
+      "id": "page_cfb29135e38d408e8a3f2bd640886f5b",
+      "slug": "services",
+      "titleFr": "Services numériques",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_90cf7583ec6c4ecd9b4734980676a066",
+          "type": "SERVICE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Votre campus connecté",
+            "title": "Les ressources, *à portée de main.*",
+            "intro": "Enseignement, documentation, recherche et services universitaires : retrouvez vos accès dans un même espace."
+          },
+          "pageId": "page_cfb29135e38d408e8a3f2bd640886f5b"
+        },
+        {
+          "id": "sec_4d64438831d341eaaaa05bc033f5a152",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "eyebrow": "Accompagnement",
+            "title": "Besoin d’un *coup de main ?*",
+            "intro": "Les informations de connexion et les contacts d’assistance seront complétés pour chaque service.",
+            "items": [
+              {
+                "tag": "Assistance",
+                "title": "Première connexion",
+                "body": "Compte institutionnel, accès aux cours et ressources documentaires.",
+                "href": "/contact"
+              },
+              {
+                "tag": "Documentation",
+                "title": "Guides et formulaires",
+                "body": "Retrouvez les ressources administratives de l’école.",
+                "href": "/documents"
+              }
+            ]
+          },
+          "pageId": "page_cfb29135e38d408e8a3f2bd640886f5b"
+        }
+      ],
+      "bannerImage": "/photos/salle-informatique.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_5fe7aeedace54ca8a5929a0f85b43ea8",
+      "slug": "vie-etudiante",
+      "titleFr": "Vie étudiante",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_f5ee185337d24680b9335547be6d2bac",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Vivre le campus",
+            "title": "Apprendre. Partager. *S’engager.*",
+            "intro": "Une place pour les initiatives étudiantes, les activités de terrain et la vie quotidienne du campus.",
+            "items": [
+              {
+                "tag": "Communauté",
+                "title": "Clubs & associations",
+                "body": "Initiatives scientifiques, culturelles et environnementales.",
+                "href": "/vie-etudiante/clubs"
+              },
+              {
+                "tag": "Expériences",
+                "title": "Sorties & vie de terrain",
+                "body": "Découvrir les écosystèmes et apprendre par la pratique.",
+                "href": "/vie-etudiante/terrain"
+              },
+              {
+                "tag": "Campus",
+                "title": "Sport & culture",
+                "body": "Activités sportives, rencontres et expression culturelle.",
+                "href": "/vie-etudiante/sport-culture"
+              },
+              {
+                "tag": "Accompagnement",
+                "title": "Santé & accompagnement",
+                "body": "Informations utiles et contacts des services compétents.",
+                "href": "/vie-etudiante/accompagnement"
+              },
+              {
+                "tag": "Pratique",
+                "title": "Hébergement & transport",
+                "body": "Repères pour préparer votre vie à Khenchela.",
+                "href": "/vie-etudiante/vie-pratique"
+              },
+              {
+                "tag": "Initiatives",
+                "title": "Entrepreneuriat & innovation",
+                "body": "Accompagnement des idées et des projets étudiants.",
+                "href": "/vie-etudiante/entrepreneuriat"
+              }
+            ],
+            "image": "/photos/etudiants-badges.jpg"
+          },
+          "pageId": "page_5fe7aeedace54ca8a5929a0f85b43ea8"
+        },
+        {
+          "id": "sec_e50ea4523a3c452ab973bbbf6c49f760",
+          "type": "GALLERY",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "eyebrow": "Le campus en images",
+            "title": "Une école qui se vit *ensemble.*",
+            "intro": "Espaces de travail et activités universitaires.",
+            "images": [
+              {
+                "src": "/photos/salle-informatique.jpg",
+                "caption": "Espaces numériques"
+              },
+              {
+                "src": "/photos/bibliotheque-livres.jpg",
+                "caption": "Bibliothèque"
+              },
+              {
+                "src": "/photos/tp-laboratoire.jpg",
+                "caption": "Travaux pratiques"
+              }
+            ]
+          },
+          "pageId": "page_5fe7aeedace54ca8a5929a0f85b43ea8"
+        },
+        {
+          "id": "sec_f82877b735ac4691bf14ac83636924dc",
+          "type": "EVENTS_LIST",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 2,
+          "dataFr": {
+            "eyebrow": "Se retrouver",
+            "title": "Les rendez-vous *du campus.*",
+            "count": 3
+          },
+          "pageId": "page_5fe7aeedace54ca8a5929a0f85b43ea8"
+        }
+      ],
+      "bannerImage": "/photos/etudiants-badges.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_54c51d28213646b89e6230b1c95a5d74",
+      "slug": "vie-etudiante/clubs",
+      "titleFr": "Clubs & associations",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_c0abb168fbce44bb82e07c567a1135d6",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Vie étudiante",
+            "title": "Clubs & associations",
+            "intro": "Clubs, activités et initiatives de la communauté étudiante.",
+            "items": [
+              {
+                "tag": "Campus",
+                "title": "Clubs scientifiques",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Culture & solidarité",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Environnement & bénévolat",
+                "body": "Les informations détaillées seront publiées prochainement."
+              }
+            ]
+          },
+          "pageId": "page_54c51d28213646b89e6230b1c95a5d74"
+        },
+        {
+          "id": "sec_014a0e2df17f433f9c58212c5e1e3640",
+          "type": "EVENTS_LIST",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "title": "Rencontres & *rendez-vous.*",
+            "count": 3
+          },
+          "pageId": "page_54c51d28213646b89e6230b1c95a5d74"
+        }
+      ],
+      "bannerImage": "/photos/sortie-foret-garde.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_8e149502d53d41778706e431de2f5f5d",
+      "slug": "vie-etudiante/terrain",
+      "titleFr": "Sorties & vie de terrain",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_0d5e20287745499cb4115642855b961a",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Vie étudiante",
+            "title": "Sorties & vie de terrain",
+            "intro": "Sorties pédagogiques, consignes et informations pratiques pour apprendre sur le terrain.",
+            "items": [
+              {
+                "tag": "Campus",
+                "title": "Sorties pédagogiques",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Consignes & équipement",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Carnets de terrain",
+                "body": "Les informations détaillées seront publiées prochainement."
+              }
+            ]
+          },
+          "pageId": "page_8e149502d53d41778706e431de2f5f5d"
+        },
+        {
+          "id": "sec_e1329dc702984b57b236f4f194aca4f7",
+          "type": "EVENTS_LIST",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "title": "Rencontres & *rendez-vous.*",
+            "count": 3
+          },
+          "pageId": "page_8e149502d53d41778706e431de2f5f5d"
+        }
+      ],
+      "bannerImage": "/photos/sortie-foret-garde.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_fe44987355664d229d60f926541f09a9",
+      "slug": "vie-etudiante/sport-culture",
+      "titleFr": "Sport & culture",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_4f347acfc3bb4965838df80e493f5da5",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Vie étudiante",
+            "title": "Sport & culture",
+            "intro": "Un espace pour les activités et les initiatives de la communauté étudiante.",
+            "items": [
+              {
+                "tag": "Campus",
+                "title": "Activités sportives",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Ateliers culturels",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Compétitions & rencontres",
+                "body": "Les informations détaillées seront publiées prochainement."
+              }
+            ]
+          },
+          "pageId": "page_fe44987355664d229d60f926541f09a9"
+        },
+        {
+          "id": "sec_35f10e7f8fed4f2099f356462d298729",
+          "type": "EVENTS_LIST",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "title": "Rencontres & *rendez-vous.*",
+            "count": 3
+          },
+          "pageId": "page_fe44987355664d229d60f926541f09a9"
+        }
+      ],
+      "bannerImage": "/photos/sortie-foret-garde.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_64c5b82c6de345c79b07b6b498b103a1",
+      "slug": "vie-etudiante/accompagnement",
+      "titleFr": "Santé & accompagnement",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_90809f2a7aca4c898c9a32ba2c68a11e",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Vie étudiante",
+            "title": "Santé & accompagnement",
+            "intro": "Retrouvez ici les informations validées par les services d’accompagnement.",
+            "items": [
+              {
+                "tag": "Campus",
+                "title": "Santé & prévention",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Accompagnement étudiant",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Accessibilité",
+                "body": "Les informations détaillées seront publiées prochainement."
+              }
+            ]
+          },
+          "pageId": "page_64c5b82c6de345c79b07b6b498b103a1"
+        },
+        {
+          "id": "sec_a22904a0d4344c27a5b39448cb0dbb33",
+          "type": "EVENTS_LIST",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "title": "Rencontres & *rendez-vous.*",
+            "count": 3
+          },
+          "pageId": "page_64c5b82c6de345c79b07b6b498b103a1"
+        }
+      ],
+      "bannerImage": "/photos/sortie-foret-garde.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_628631c6497f47bd83f6ab2c5efd606a",
+      "slug": "vie-etudiante/vie-pratique",
+      "titleFr": "Vie pratique à Khenchela",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_f75a3673e3224b63b0252581795061a9",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Vie étudiante",
+            "title": "Vie pratique à Khenchela",
+            "intro": "Les modalités et contacts seront publiés après validation par les services concernés.",
+            "items": [
+              {
+                "tag": "Campus",
+                "title": "Hébergement",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Restauration",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Transport & accès",
+                "body": "Les informations détaillées seront publiées prochainement."
+              }
+            ]
+          },
+          "pageId": "page_628631c6497f47bd83f6ab2c5efd606a"
+        },
+        {
+          "id": "sec_09916c314edf465b88c8d81ddeaa5c16",
+          "type": "EVENTS_LIST",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "title": "Rencontres & *rendez-vous.*",
+            "count": 3
+          },
+          "pageId": "page_628631c6497f47bd83f6ab2c5efd606a"
+        }
+      ],
+      "bannerImage": "/photos/sortie-foret-garde.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_ba6a143d25924b58bc9da9aef9670e8e",
+      "slug": "vie-etudiante/entrepreneuriat",
+      "titleFr": "Entrepreneuriat & innovation",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_064e2f53ec784a389b134c04e35bc1e1",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Vie étudiante",
+            "title": "Entrepreneuriat & innovation",
+            "intro": "Un espace dédié aux idées, aux projets et aux possibilités d’accompagnement.",
+            "items": [
+              {
+                "tag": "Campus",
+                "title": "Incubation & accompagnement",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Projets étudiants",
+                "body": "Les informations détaillées seront publiées prochainement."
+              },
+              {
+                "tag": "Campus",
+                "title": "Appels à projets",
+                "body": "Les informations détaillées seront publiées prochainement."
+              }
+            ]
+          },
+          "pageId": "page_ba6a143d25924b58bc9da9aef9670e8e"
+        },
+        {
+          "id": "sec_97b6bd3d4e4c43b7808d52dbb5919e21",
+          "type": "EVENTS_LIST",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "title": "Rencontres & *rendez-vous.*",
+            "count": 3
+          },
+          "pageId": "page_ba6a143d25924b58bc9da9aef9670e8e"
+        }
+      ],
+      "bannerImage": "/photos/sortie-foret-garde.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_43ef8e00356c4fdbaa563b9e765ecd24",
+      "slug": "scolarite",
+      "titleFr": "Scolarité & ressources étudiantes",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_2bdd00dc65354959b4e98c0d09c59a62",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Au quotidien",
+            "title": "Les repères de *votre parcours.*",
+            "intro": "Retrouvez les informations pédagogiques et les ressources utiles à votre scolarité.",
+            "items": [
+              {
+                "tag": "Organisation",
+                "title": "Emplois du temps",
+                "body": "Cours, groupes et salles, par niveau de formation.",
+                "href": "/scolarite/emplois-du-temps"
+              },
+              {
+                "tag": "Dates clés",
+                "title": "Calendrier universitaire",
+                "body": "Périodes pédagogiques, examens et vacances.",
+                "href": "/scolarite/calendrier"
+              },
+              {
+                "tag": "Évaluation",
+                "title": "Examens & soutenances",
+                "body": "Plannings, consignes et informations pratiques.",
+                "href": "/scolarite/examens"
+              },
+              {
+                "tag": "Démarches",
+                "title": "Procédures administratives",
+                "body": "Réinscription, demandes et formulaires.",
+                "href": "/scolarite/demarches"
+              },
+              {
+                "tag": "Expérience",
+                "title": "Stages & insertion",
+                "body": "Conventions, démarches et accompagnement.",
+                "href": "/scolarite/stages"
+              },
+              {
+                "tag": "Documents",
+                "title": "Téléchargements",
+                "body": "Formulaires et documents utiles.",
+                "href": "/documents"
+              }
+            ]
+          },
+          "pageId": "page_43ef8e00356c4fdbaa563b9e765ecd24"
+        },
+        {
+          "id": "sec_cabee0bf0ef64a0fbdb4a7d3fbf87d19",
+          "type": "NEWS_LIST",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "eyebrow": "Rester informé",
+            "title": "Les dernières *actualités.*",
+            "count": 4
+          },
+          "pageId": "page_43ef8e00356c4fdbaa563b9e765ecd24"
+        },
+        {
+          "id": "sec_c605a71c72704c9ea4a9821fb526d79a",
+          "type": "SERVICE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 2,
+          "dataFr": {
+            "eyebrow": "Accès directs",
+            "title": "Vos services *en ligne.*"
+          },
+          "pageId": "page_43ef8e00356c4fdbaa563b9e765ecd24"
+        }
+      ],
+      "bannerImage": "/photos/salle-informatique.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_c0848fafacca44e49bb8fead61b07d27",
+      "slug": "scolarite/emplois-du-temps",
+      "titleFr": "Emplois du temps",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_4d7b57856e5341e1b1a26202f4359059",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Scolarité",
+            "title": "Emplois du temps",
+            "intro": "Les informations de l’année universitaire seront ajoutées après validation par la scolarité.",
+            "items": [
+              {
+                "tag": "Scolarité",
+                "title": "Par niveau",
+                "body": "Informations et documents à venir."
+              },
+              {
+                "tag": "Scolarité",
+                "title": "Par groupe",
+                "body": "Informations et documents à venir."
+              },
+              {
+                "tag": "Scolarité",
+                "title": "Modifications de planning",
+                "body": "Informations et documents à venir."
+              }
+            ]
+          },
+          "pageId": "page_c0848fafacca44e49bb8fead61b07d27"
+        }
+      ],
+      "bannerImage": "/photos/salle-informatique.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_7d897b9962784a839de4cc634f10b59d",
+      "slug": "scolarite/calendrier",
+      "titleFr": "Calendrier universitaire",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_041839e27f1449ce91366e0a4ca9c6c4",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Scolarité",
+            "title": "Calendrier universitaire",
+            "intro": "Les informations de l’année universitaire seront ajoutées après validation par la scolarité.",
+            "items": [
+              {
+                "tag": "Scolarité",
+                "title": "Rentrée & enseignements",
+                "body": "Informations et documents à venir."
+              },
+              {
+                "tag": "Scolarité",
+                "title": "Sessions d’examens",
+                "body": "Informations et documents à venir."
+              },
+              {
+                "tag": "Scolarité",
+                "title": "Vacances universitaires",
+                "body": "Informations et documents à venir."
+              }
+            ]
+          },
+          "pageId": "page_7d897b9962784a839de4cc634f10b59d"
+        }
+      ],
+      "bannerImage": "/photos/salle-informatique.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_54f6c630dc9746e496ca4c61dd797d4a",
+      "slug": "scolarite/examens",
+      "titleFr": "Examens & soutenances",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_e8cca09faff6444283526502261f7966",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Scolarité",
+            "title": "Examens & soutenances",
+            "intro": "Les informations de l’année universitaire seront ajoutées après validation par la scolarité.",
+            "items": [
+              {
+                "tag": "Scolarité",
+                "title": "Planning des examens",
+                "body": "Informations et documents à venir."
+              },
+              {
+                "tag": "Scolarité",
+                "title": "Consignes",
+                "body": "Informations et documents à venir."
+              },
+              {
+                "tag": "Scolarité",
+                "title": "Calendrier des soutenances",
+                "body": "Informations et documents à venir."
+              }
+            ]
+          },
+          "pageId": "page_54f6c630dc9746e496ca4c61dd797d4a"
+        }
+      ],
+      "bannerImage": "/photos/salle-informatique.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_63f6975ca0b84e9aba77a01c2cf4501d",
+      "slug": "scolarite/demarches",
+      "titleFr": "Démarches administratives",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_1c3e224a81834a74a96c934f3968a029",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Scolarité",
+            "title": "Démarches administratives",
+            "intro": "Les informations de l’année universitaire seront ajoutées après validation par la scolarité.",
+            "items": [
+              {
+                "tag": "Scolarité",
+                "title": "Réinscription",
+                "body": "Informations et documents à venir."
+              },
+              {
+                "tag": "Scolarité",
+                "title": "Demandes administratives",
+                "body": "Informations et documents à venir."
+              },
+              {
+                "tag": "Scolarité",
+                "title": "Documents à fournir",
+                "body": "Informations et documents à venir."
+              }
+            ]
+          },
+          "pageId": "page_63f6975ca0b84e9aba77a01c2cf4501d"
+        }
+      ],
+      "bannerImage": "/photos/salle-informatique.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_ea4f0711f8ae4cf3a1b3848951c6b573",
+      "slug": "scolarite/stages",
+      "titleFr": "Stages & insertion",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_605f6ce9741644a0be4ab5f1e0eaccfb",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Scolarité",
+            "title": "Stages & insertion",
+            "intro": "Les informations de l’année universitaire seront ajoutées après validation par la scolarité.",
+            "items": [
+              {
+                "tag": "Scolarité",
+                "title": "Recherche de stage",
+                "body": "Informations et documents à venir."
+              },
+              {
+                "tag": "Scolarité",
+                "title": "Convention & dossier",
+                "body": "Informations et documents à venir."
+              },
+              {
+                "tag": "Scolarité",
+                "title": "Rapport & évaluation",
+                "body": "Informations et documents à venir."
+              }
+            ]
+          },
+          "pageId": "page_ea4f0711f8ae4cf3a1b3848951c6b573"
+        }
+      ],
+      "bannerImage": "/photos/salle-informatique.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_c291dedd6c4e415480b9f70030aee705",
+      "slug": "admissions",
+      "titleFr": "Admissions",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_ed1abcb9252148efba296c621b2342f1",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Préparer votre arrivée",
+            "title": "Votre prochain chapitre *commence ici.*",
+            "intro": "Retrouvez les modalités officielles d’accès, les étapes et les contacts pour préparer votre candidature.",
+            "items": [
+              {
+                "tag": "Orientation",
+                "title": "Nouveaux bacheliers",
+                "body": "Conditions d’accès et procédure d’orientation de l’année en cours."
+              },
+              {
+                "tag": "Candidature",
+                "title": "Dossier & inscription",
+                "body": "Liste des pièces, calendrier et modalités de dépôt."
+              },
+              {
+                "tag": "Parcours",
+                "title": "Nos formations",
+                "body": "Découvrez les cycles présentés par l’école.",
+                "href": "/programmes"
+              },
+              {
+                "tag": "Accompagnement",
+                "title": "Questions & contact",
+                "body": "Contactez l’école pour les modalités applicables à votre situation.",
+                "href": "/contact"
+              }
+            ]
+          },
+          "pageId": "page_c291dedd6c4e415480b9f70030aee705"
+        },
+        {
+          "id": "sec_193ed83f9a6043f283d95b3a921b6784",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "eyebrow": "Avant de candidater",
+            "title": "Les informations *à vérifier.*",
+            "intro": "Les dates, conditions et seuils officiels seront renseignés pour chaque campagne.",
+            "items": [
+              {
+                "tag": "Conditions",
+                "title": "Éligibilité",
+                "body": "Séries du baccalauréat et conditions officielles."
+              },
+              {
+                "tag": "Calendrier",
+                "title": "Dates clés",
+                "body": "Ouverture, dépôt et confirmation de l’inscription."
+              },
+              {
+                "tag": "Documents",
+                "title": "Pièces du dossier",
+                "body": "Documents demandés et modalités de transmission."
+              }
+            ]
+          },
+          "pageId": "page_c291dedd6c4e415480b9f70030aee705"
+        }
+      ],
+      "bannerImage": "/photos/sortie-foret-garde.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_f7486c265aa2464fa600276c2938629c",
+      "slug": "documents",
+      "titleFr": "Documents & formulaires",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_1dc53244f2dc40e98e3cc4d02ac93936",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Ressources",
+            "title": "Les documents *essentiels.*",
+            "intro": "Les documents validés seront rassemblés dans cet espace.",
+            "items": [
+              {
+                "tag": "Scolarité",
+                "title": "Inscription & réinscription",
+                "body": "Formulaires et listes des pièces à fournir."
+              },
+              {
+                "tag": "Vie étudiante",
+                "title": "Règlements & guides",
+                "body": "Règlement intérieur et guides pratiques."
+              },
+              {
+                "tag": "Stages",
+                "title": "Conventions & rapports",
+                "body": "Documents de stage et fiches de suivi."
+              }
+            ]
+          },
+          "pageId": "page_f7486c265aa2464fa600276c2938629c"
+        },
+        {
+          "id": "sec_eb452d13e1dc43f79de9d6390383f8d2",
+          "type": "DOWNLOADS",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "eyebrow": "Téléchargements",
+            "title": "Bibliothèque de documents"
+          },
+          "pageId": "page_f7486c265aa2464fa600276c2938629c"
+        }
+      ],
+      "bannerImage": "/photos/bibliotheque-livres.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
+    },
+    {
+      "id": "page_e50d98eb3c734887a85b6ad8e9ae3f61",
+      "slug": "recherche/ressources",
+      "titleFr": "Ressources de recherche",
+      "status": "PUBLISHED",
+      "sections": [
+        {
+          "id": "sec_fd931478a2ad4844923b21f763f169ca",
+          "type": "SERVICE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 0,
+          "dataFr": {
+            "eyebrow": "Science & documentation",
+            "title": "Explorer, apprendre, *publier.*",
+            "intro": "DSpace, SNDL, EDX et ressources numériques pour la communauté scientifique."
+          },
+          "pageId": "page_e50d98eb3c734887a85b6ad8e9ae3f61"
+        },
+        {
+          "id": "sec_82716ce016a1408face3f7fc0cd6f7c7",
+          "type": "RESOURCE_GRID",
+          "variant": "LIGHT",
+          "hidden": false,
+          "order": 1,
+          "dataFr": {
+            "eyebrow": "Recherche",
+            "title": "Projets & *opportunités.*",
+            "intro": "Cet espace est prêt à accueillir les informations de la recherche.",
+            "items": [
+              {
+                "tag": "Projets",
+                "title": "Appels à projets",
+                "body": "Campagnes et modalités de candidature."
+              },
+              {
+                "tag": "Doctorat",
+                "title": "Formation doctorale",
+                "body": "Informations et contacts de la formation doctorale."
+              },
+              {
+                "tag": "Publications",
+                "title": "Production scientifique",
+                "body": "Publications et résultats des équipes de recherche."
+              }
+            ]
+          },
+          "pageId": "page_e50d98eb3c734887a85b6ad8e9ae3f61"
+        }
+      ],
+      "bannerImage": "/photos/labo-microscopes.jpg",
+      "createdAt": "2026-11-13T01:20:01.767Z",
+      "updatedAt": "2026-11-13T01:20:01.767Z"
     }
   ],
   "news": [
@@ -599,7 +1575,8 @@
       "coverImage": "/photos/serre-pepiniere.jpg",
       "category": "Vie de l'école",
       "publishedAt": "2026-11-10T13:30:52.845Z",
-      "createdAt": "2026-11-10T13:30:52.845Z"
+      "createdAt": "2026-11-10T13:30:52.845Z",
+      "featured": true
     },
     {
       "id": "news_8711f819cfd2493f8984ecd6452ad44e",
@@ -624,6 +1601,28 @@
       "category": "Admissions",
       "publishedAt": "2026-10-16T13:30:52.971Z",
       "createdAt": "2026-11-10T13:30:52.845Z"
+    },
+    {
+      "slug": "dspace",
+      "status": "PUBLISHED",
+      "titleFr": "DSpace",
+      "excerptFr": "Rien pout le moments",
+      "bodyFr": "Cette version utilise un serveur Node.js unique et un disque persistant. Le contenu et les photos téléversées sont enregistrés dans le dossier data. Une plateforme sans disque persistant perdrait les modifications lors des redéploiements. Pour plusieurs serveurs, migrer le stockage vers une base de données et un stockage d’objets partagés avant la mise en service.\r\n\r\n1. Installer Node.js 22 LTS et exécuter npm ci.\r\n2. Copier le dossier data validé et les photos de public avec le projet. Conserver data entre les déploiements.\r\n3. Définir AUTH_SECRET avec une valeur aléatoire privée et AUTH_URL avec le domaine HTTPS officiel. Garder les secrets hors du dépôt.\r\n4. En local, ouvrir /admin/account et remplacer le mot de passe de démonstration. Le mot de passe ChangeMe123! est refusé en production. Un changement de mot de passe invalide les sessions précédentes.\r\n5. Exécuter npm run build, puis npm run start derrière un serveur HTTPS. Configurer le redémarrage automatique du processus et la journalisation des erreurs.\r\n6. Vérifier les liens institutionnels, coordonnées, traductions et contenus avec l’établissement. Les données préremplies sont des exemples.\r\n",
+      "coverImage": "/api/news-photos/22f68132-4dd6-4efa-85a6-d83bd6d72c0a.webp",
+      "publishedAt": "2026-11-13",
+      "createdAt": "2026-11-13T02:52:40.193Z",
+      "id": "news_18cc1bddfac644559a919fd37c0ec24b",
+      "featured": true,
+      "titleAr": "",
+      "titleEn": "",
+      "excerptAr": "",
+      "excerptEn": "",
+      "bodyAr": "",
+      "bodyEn": "",
+      "gallery": [
+        "/api/news-photos/6cedd650-ad53-4652-bd40-f66668495af7.webp"
+      ],
+      "layout": "reportage"
     }
   ],
   "programs": [
@@ -742,20 +1741,20 @@
       "labelFr": "Accueil",
       "href": "",
       "order": 0,
-      "parentId": null
+      "parentId": "menu_11b93ba87aaf41b2adcc447332c46b12"
     },
     {
       "id": "menu_11b93ba87aaf41b2adcc447332c46b12",
       "labelFr": "À propos",
       "href": "/a-propos",
-      "order": 1,
+      "order": 0,
       "parentId": null
     },
     {
       "id": "menu_62251ef4a653416988432397c1b18a94",
       "labelFr": "Programmes",
       "href": "/programmes",
-      "order": 2,
+      "order": 1,
       "parentId": null
     },
     {
@@ -767,9 +1766,9 @@
     },
     {
       "id": "menu_37cbe0854e114794a6cd5c19b64be255",
-      "labelFr": "Actualités",
+      "labelFr": "Actualités & agenda",
       "href": "/actualites",
-      "order": 4,
+      "order": 5,
       "parentId": null
     },
     {
@@ -778,6 +1777,139 @@
       "href": "/contact",
       "order": 5,
       "parentId": null
+    },
+    {
+      "id": "menu_410b676b77164d7f8417207ad9743dcd",
+      "labelFr": "Scolarité",
+      "href": "/scolarite",
+      "parentId": null,
+      "order": 2
+    },
+    {
+      "id": "menu_f1f122ffcb114b71a48842b29d77bd44",
+      "labelFr": "Admissions",
+      "href": "/admissions",
+      "parentId": "menu_410b676b77164d7f8417207ad9743dcd",
+      "order": 0
+    },
+    {
+      "id": "menu_6de29c48cd5c4d47b95232efe866fad3",
+      "labelFr": "Emplois du temps",
+      "href": "/scolarite/emplois-du-temps",
+      "parentId": "menu_410b676b77164d7f8417207ad9743dcd",
+      "order": 1
+    },
+    {
+      "id": "menu_c54ba7d00d3a425fbb0719e60faa1a32",
+      "labelFr": "Calendrier universitaire",
+      "href": "/scolarite/calendrier",
+      "parentId": "menu_410b676b77164d7f8417207ad9743dcd",
+      "order": 2
+    },
+    {
+      "id": "menu_0cbad2fe49da432583abd3ad5a85035c",
+      "labelFr": "Examens & soutenances",
+      "href": "/scolarite/examens",
+      "parentId": "menu_410b676b77164d7f8417207ad9743dcd",
+      "order": 3
+    },
+    {
+      "id": "menu_d5aaa5115c5d4d5eadcc2b59415e61a9",
+      "labelFr": "Stages & insertion",
+      "href": "/scolarite/stages",
+      "parentId": "menu_410b676b77164d7f8417207ad9743dcd",
+      "order": 4
+    },
+    {
+      "id": "menu_040b28e9ab0e4449a0add683fe75b997",
+      "labelFr": "Documents & formulaires",
+      "href": "/documents",
+      "parentId": "menu_410b676b77164d7f8417207ad9743dcd",
+      "order": 5
+    },
+    {
+      "id": "menu_c48b350bfe64405fb9c9822ce7c7e4ba",
+      "labelFr": "Vie étudiante",
+      "href": "/vie-etudiante",
+      "parentId": null,
+      "order": 4
+    },
+    {
+      "id": "menu_1d311b9bba0b4036806a06d3e0f5e634",
+      "labelFr": "Clubs & associations",
+      "href": "/vie-etudiante/clubs",
+      "parentId": "menu_c48b350bfe64405fb9c9822ce7c7e4ba",
+      "order": 0
+    },
+    {
+      "id": "menu_d1412acf72434aac9b01c2ab113dcc00",
+      "labelFr": "Sorties & vie de terrain",
+      "href": "/vie-etudiante/terrain",
+      "parentId": "menu_c48b350bfe64405fb9c9822ce7c7e4ba",
+      "order": 1
+    },
+    {
+      "id": "menu_df09074ebf1f474780134647a56d0c1d",
+      "labelFr": "Sport & culture",
+      "href": "/vie-etudiante/sport-culture",
+      "parentId": "menu_c48b350bfe64405fb9c9822ce7c7e4ba",
+      "order": 2
+    },
+    {
+      "id": "menu_e90bbb46599e4c2192c2a2d00b035e4f",
+      "labelFr": "Santé & accompagnement",
+      "href": "/vie-etudiante/accompagnement",
+      "parentId": "menu_c48b350bfe64405fb9c9822ce7c7e4ba",
+      "order": 3
+    },
+    {
+      "id": "menu_7fd8c31069f0457d89eeb3414aa9933c",
+      "labelFr": "Vie pratique à Khenchela",
+      "href": "/vie-etudiante/vie-pratique",
+      "parentId": "menu_c48b350bfe64405fb9c9822ce7c7e4ba",
+      "order": 4
+    },
+    {
+      "id": "menu_addc32b2784f48e4a43dea8c55872b90",
+      "labelFr": "Entrepreneuriat & innovation",
+      "href": "/vie-etudiante/entrepreneuriat",
+      "parentId": "menu_c48b350bfe64405fb9c9822ce7c7e4ba",
+      "order": 5
+    },
+    {
+      "id": "menu_4b1f2bb2c782434e8bca07e4a7832910",
+      "labelFr": "Ressources scientifiques",
+      "href": "/recherche/ressources",
+      "parentId": "menu_980865941dc74c0188655caee03ba396",
+      "order": 0
+    },
+    {
+      "id": "menu_2ca69870b4014fc8ad305d51d15f71a2",
+      "labelFr": "Événements",
+      "href": "/evenements",
+      "parentId": "menu_37cbe0854e114794a6cd5c19b64be255",
+      "order": 0
+    },
+    {
+      "id": "menu_a02865b5e17b4e2d9979005be79cce79",
+      "labelFr": "Services numériques",
+      "href": "/services",
+      "parentId": "menu_410b676b77164d7f8417207ad9743dcd",
+      "order": 6
+    },
+    {
+      "id": "menu_1308fcbc0aad489d998675b0f3ed3415",
+      "labelFr": "Annonces importantes",
+      "href": "/annonces",
+      "parentId": "menu_37cbe0854e114794a6cd5c19b64be255",
+      "order": 1
+    },
+    {
+      "id": "menu_dd88773c72814f5dae8fe2642c74ebe8",
+      "labelFr": "Opportunités",
+      "href": "/opportunites",
+      "parentId": "menu_410b676b77164d7f8417207ad9743dcd",
+      "order": 7
     }
   ],
   "media": []

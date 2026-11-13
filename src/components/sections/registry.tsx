@@ -1,4 +1,5 @@
 import type { Section, SectionType } from "@/lib/db/types";
+import BulletinBoard, {type BulletinData} from "./bulletin-board";
 import type { Locale } from "@/lib/i18n";
 import { sectionData } from "@/lib/content";
 
@@ -8,7 +9,10 @@ import Stats, { type StatsData } from "./stats";
 import PhotoStory, { type PhotoStoryData } from "./photo-story";
 import CardGrid, { type CardGridData } from "./card-grid";
 import ResearchSpotlight, { type ResearchSpotlightData } from "./research-spotlight";
-import NewsList, { type NewsListData } from "./news-list";
+import { type NewsListData } from "./news-list";
+import Newsroom from "./newsroom";
+import CampusResources, { type ResourceData } from "./campus-resources";
+import EventsList, { type EventsData } from "./events-list";
 import FacultyGrid, { type FacultyGridData } from "./faculty-grid";
 import TimelineSection, { type TimelineData } from "./timeline";
 import Partners, { type PartnersData } from "./partners";
@@ -18,6 +22,11 @@ import Downloads, { type DownloadsData } from "./downloads";
 import Gallery, { type GalleryData } from "./gallery";
 
 export const sectionLibrary: { type: SectionType; label: string; description: string }[] = [
+  { type: "ANNOUNCEMENTS", label: "Annonces importantes", description: "Avis publiés et échéances, gérés dans Annonces importantes" },
+  { type: "OPPORTUNITIES", label: "Opportunités", description: "Bourses, stages, concours et appels à candidatures" },
+  { type: "SERVICE_GRID", label: "Plateformes numériques", description: "E-learning, bibliothèque, DSpace, EDX… gérés dans Services numériques" },
+  { type: "RESOURCE_GRID", label: "Rubriques & ressources", description: "Cartes de liens pour la vie étudiante, la scolarité, la recherche, les admissions…" },
+  { type: "EVENTS_LIST", label: "Agenda / événements", description: "Événements à venir, dates, lieux et inscriptions" },
   { type: "HERO", label: "En-tête plein écran", description: "Grande photo, titre sur deux voix, deux boutons" },
   { type: "EDITORIAL", label: "Bloc éditorial", description: "Grand titre et texte en deux colonnes" },
   { type: "PHOTO_STORY", label: "Récit photographique", description: "Photo encadrée + texte, sur fond clair" },
@@ -35,11 +44,21 @@ export const sectionLibrary: { type: SectionType; label: string; description: st
 ];
 
 export async function renderSection(section: Section, locale: Locale, n = "") {
+  if (section.hidden) return null;
   const data = sectionData(section, locale);
   const variant = section.variant;
   const common = { n, locale };
 
   switch (section.type) {
+    case "ANNOUNCEMENTS":
+    case "OPPORTUNITIES":
+      return <BulletinBoard kind={section.type==="ANNOUNCEMENTS"?"annonces":"opportunites"} data={data as BulletinData} {...common}/>;
+    case "RESOURCE_GRID":
+      return <CampusResources data={data as unknown as ResourceData} {...common} />;
+    case "SERVICE_GRID":
+      return <CampusResources data={data as unknown as ResourceData} digital {...common} />;
+    case "EVENTS_LIST":
+      return <EventsList data={data as unknown as EventsData} {...common} />;
     case "HERO":
       return <Hero data={data as unknown as HeroData} locale={locale} />;
     case "EDITORIAL":
@@ -53,7 +72,7 @@ export async function renderSection(section: Section, locale: Locale, n = "") {
     case "RESEARCH_SPOTLIGHT":
       return <ResearchSpotlight data={data as unknown as ResearchSpotlightData} {...common} />;
     case "NEWS_LIST":
-      return <NewsList data={data as unknown as NewsListData} {...common} />;
+      return <Newsroom data={data as unknown as NewsListData} {...common} />;
     case "FACULTY_GRID":
       return <FacultyGrid data={data as unknown as FacultyGridData} {...common} />;
     case "TIMELINE":

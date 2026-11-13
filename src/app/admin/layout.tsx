@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import "../globals.css";
+import "../campus.css";
 
 export const metadata: Metadata = {
   title: "Administration · ENSF Khenchela",
+  robots: { index: false, follow: false },
 };
 
 /** Root shell for the whole /admin segment (login included). No auth
@@ -10,7 +12,7 @@ export const metadata: Metadata = {
  * itself never redirects to itself. */
 export default function AdminRootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className="antialiased">
+    <html lang="fr" className="antialiased" data-scroll-behavior="smooth">
       <body className="admin-body min-h-screen">{children}</body>
     </html>
   );

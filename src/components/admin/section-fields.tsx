@@ -67,8 +67,8 @@ function Area({
  * from its current French content. Repeatable content (stats, cards,
  * timeline steps, partner names) uses one line per item with "|" between
  * sub-fields — the placeholder in each textarea documents the format. */
-export default function SectionFields({ section }: { section: Section }) {
-  const d = section.dataFr as Record<string, unknown>;
+export default function SectionFields({ section, language = "fr" }: { section: Section; language?: string }) {
+  const d = (language === "ar" ? section.dataAr : language === "en" ? section.dataEn : section.dataFr) || {};
 
   const statsLines = arr(d, "items").map((it) => `${it.value ?? ""} | ${it.label ?? ""}`).join("\n");
   const cardsLines = arr(d, "cards")
@@ -79,6 +79,24 @@ export default function SectionFields({ section }: { section: Section }) {
   const logosLines = arr(d, "logos").map((it) => `${it.name ?? ""}`).join("\n");
 
   switch (section.type) {
+    case "RESOURCE_GRID":
+    case "ANNOUNCEMENTS":
+    case "OPPORTUNITIES":
+    case "SERVICE_GRID":
+    case "EVENTS_LIST":
+      return <div className="space-y-4">
+        <Text data={d} name="eyebrow" label="Sur-titre" />
+        <Text data={d} name="title" label="Titre (*italique*)" />
+        <Area data={d} name="intro" label="Introduction" />
+        {(section.type === "ANNOUNCEMENTS" || section.type === "OPPORTUNITIES") && <><Text data={d} name="count" label="Nombre d’éléments (1 à 12)" value={String(d.count || 3)} /><p className="caption">Les publications et dates limites se gèrent dans <a className="a-link" href={`/admin/bulletins/${section.type === "ANNOUNCEMENTS" ? "annonces" : "opportunites"}`}>la rubrique dédiée ↗</a>.</p></>}
+        {section.type === "RESOURCE_GRID" && <>
+          <Text data={d} name="image" label="Photo panoramique (optionnelle)" />
+          <Area data={d} name="items" label="Une rubrique par ligne : catégorie | titre | description | lien (facultatif)" rows={9} value={arr(d, "items").map((i) => `${i.tag || ""} | ${i.title || ""} | ${i.body || ""} | ${i.href || ""}`).join("\n")} />
+          <p className="caption">Laissez le lien vide en attendant le contenu. Liens internes : /vie-etudiante/clubs ; externes : https://…</p>
+        </>}
+        {section.type === "SERVICE_GRID" && <p className="caption">Les plateformes, leur ordre et leurs liens se modifient dans <a href="/admin/services" className="a-link">Services numériques ↗</a>.</p>}
+        {section.type === "EVENTS_LIST" && <><Text data={d} name="count" label="Nombre d’événements (1 à 12)" value={String(d.count || 3)} /><p className="caption">Gérez les dates et les publications dans <a href="/admin/events" className="a-link">Événements ↗</a>.</p></>}
+      </div>;
     case "HERO":
       return (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

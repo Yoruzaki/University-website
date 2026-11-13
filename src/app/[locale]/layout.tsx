@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.css";
+import "../campus.css";
 import { isRtl, isValidLocale, locales, t, type Locale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import SiteHeader from "@/components/site/site-header";

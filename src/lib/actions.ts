@@ -9,6 +9,9 @@ import type { Section } from "@/lib/db/types";
 async function requireSession() {
   const session = await auth();
   if (!session?.user) redirect("/admin/login");
+  if (!["EDITOR", "SUPER_ADMIN"].includes((session.user as { role?: string }).role ?? "")) {
+    throw new Error("Accès réservé aux éditeurs.");
+  }
   return session;
 }
 
@@ -112,6 +115,18 @@ export async function updateSectionFieldsAction(
   let dataFr: Record<string, unknown> = {};
 
   switch (type) {
+    case "RESOURCE_GRID":
+      dataFr = { eyebrow: f("eyebrow"), title: f("title"), intro: f("intro"), image: f("image"), items: parseLines(f("items")).map((line) => {
+        const [tag, title, body, href] = line.split("|").map((s) => s.trim());
+        return { tag, title: title || "", body, href };
+      }) };
+      break;
+    case "SERVICE_GRID":
+    case "ANNOUNCEMENTS":
+    case "OPPORTUNITIES":
+    case "EVENTS_LIST":
+      dataFr = { eyebrow: f("eyebrow"), title: f("title"), intro: f("intro"), count: Math.max(1, Math.min(12, Number(f("count")) || 3)) };
+      break;
     case "HERO":
       dataFr = {
         eyebrow: f("eyebrow"),
@@ -226,7 +241,9 @@ export async function updateSectionFieldsAction(
       break;
   }
 
-  await content.updateSection(pageId, sectionId, { variant, dataFr });
+  const language = f("language");
+  const dataKey = language === "ar" ? "dataAr" : language === "en" ? "dataEn" : "dataFr";
+  await content.updateSection(pageId, sectionId, { variant, hidden: formData.has("hidden"), [dataKey]: dataFr });
   revalidatePath(`/admin/pages/${pageId}`);
   revalidateSite();
 }
@@ -255,22 +272,48 @@ export async function moveSectionAction(pageId: string, sectionId: string, direc
 
 /* ---------- news ---------- */
 
-export async function saveNewsAction(formData: FormData) {
+export async function saveNewsAction(_previous: { message: string }, formData: FormData) {
   await requireSession();
   const id = String(formData.get("id") ?? "") || undefined;
+  const photos = formData.getAll("photos").map(String);
+  const slug = String(formData.get("slug") ?? "").trim();
+  const title = String(formData.get("titleFr") ?? "").trim();
+  const publishedAt = String(formData.get("publishedAt") ?? "");
+  if (!title || title.length > 200) return { message: "Renseignez un titre de 200 caractères maximum." };
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return { message: "L’adresse doit contenir des lettres minuscules, chiffres et tirets." };
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(publishedAt) || !Number.isFinite(Date.parse(publishedAt))) return { message: "Vérifiez la date de publication." };
+  const existing = await content.getAllNews();
+  const original = existing.find(n => n.id === id);
+  if (photos.length > 5 || photos.some(src => src.length > 2048 || (!/^(https?:\/\/|\/(?!\/))/.test(src) && src !== original?.coverImage))) return { message: "Ajoutez jusqu’à cinq photos valides." };
+  if (id && !existing.some(n => n.id === id)) return { message: "Cette publication a été supprimée." };
+  if (existing.some(n => n.slug === slug && n.id !== id)) return { message: "Cette adresse est déjà utilisée. Choisissez une autre adresse." };
+  try {
   await content.upsertNews({
     id,
-    slug: String(formData.get("slug") ?? "").trim(),
-    titleFr: String(formData.get("titleFr") ?? ""),
+    featured: formData.has("featured"),
+    publishedAt: String(formData.get("publishedAt") || new Date().toISOString()),
+    slug,
+    titleFr: title,
+    titleAr: String(formData.get("titleAr") ?? "").trim(),
+    titleEn: String(formData.get("titleEn") ?? "").trim(),
+    excerptAr: String(formData.get("excerptAr") ?? "").trim(),
+    excerptEn: String(formData.get("excerptEn") ?? "").trim(),
+    bodyAr: String(formData.get("bodyAr") ?? "").trim(),
+    bodyEn: String(formData.get("bodyEn") ?? "").trim(),
     excerptFr: String(formData.get("excerptFr") ?? "") || undefined,
     bodyFr: String(formData.get("bodyFr") ?? "") || undefined,
     category: String(formData.get("category") ?? "") || undefined,
-    coverImage: String(formData.get("coverImage") ?? "") || undefined,
-    status: (String(formData.get("status") ?? "DRAFT") as "DRAFT" | "PUBLISHED"),
+    coverImage: photos[0],
+    gallery: photos.slice(1),
+    layout: formData.get("layout") === "reportage" ? "reportage" : "article",
+    status: formData.get("status") === "PUBLISHED" ? "PUBLISHED" : "DRAFT",
   });
+  } catch {
+    return { message: "L’enregistrement a échoué. Votre texte est conservé dans le formulaire. Réessayez." };
+  }
   revalidatePath("/admin/news");
   revalidateSite();
-  redirect("/admin/news");
+  redirect("/admin/news?saved=1");
 }
 
 export async function deleteNewsAction(id: string) {
