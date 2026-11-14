@@ -8,7 +8,7 @@
       "titleEn": "E-learning",
       "summaryFr": "Cours, supports pédagogiques et activités d’apprentissage en ligne.",
       "category": "Pédagogie",
-      "url": "http://41.111.224.82:5002/",
+      "url": "https://elearning.auresnix.com/",
       "enabled": true,
       "order": 0
     },
@@ -30,7 +30,7 @@
       "titleEn": "DSpace",
       "summaryFr": "Mémoires, thèses et publications scientifiques de l’établissement.",
       "category": "Recherche",
-      "url": "",
+      "url": "https://dspace.auresnix.com/",
       "enabled": true,
       "order": 2,
       "summaryAr": "",

@@ -8,6 +8,6 @@
  */
 export const SITE_LINKS = {
   studentSpace: "",
-  eLearning: "http://41.111.224.82:5002/",
+  eLearning: "https://elearning.auresnix.com/",
   library: "",
 };
