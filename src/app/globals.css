@@ -1803,6 +1803,9 @@ html[dir="rtl"] .final-content h2 {
   background: #fff;
   color: var(--blue);
 }
+.footer-social a:focus-visible { outline:2px solid var(--lime); outline-offset:4px; }
+.footer-credit { white-space:nowrap; }
+.footer-credit a { color:var(--lime); font-weight:600; }
 .footer-bottom {
   padding-top: 23px;
   display: flex;

@@ -7,7 +7,7 @@
  * once it exists.
  */
 export const SITE_LINKS = {
-  studentSpace: "",
+  studentSpace: "https://progres.mesrs.dz/webetu/",
   eLearning: "https://elearning.auresnix.com/",
-  library: "",
+  library: "https://library.ensf.dz/",
 };

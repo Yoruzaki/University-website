@@ -100,7 +100,7 @@ export default function SectionFields({ section, language = "fr" }: { section: S
     case "HERO":
       return (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <Text data={d} name="eyebrow" label="Sur-titre" placeholder="Depuis 1986" />
+          <Text data={d} name="eyebrow" label="Sur-titre" placeholder="Depuis 2021" />
           <Text data={d} name="ctaLabel" label="Bouton — texte" placeholder="Découvrir l'école" />
           <div className="sm:col-span-2">
             <Text data={d} name="title" label="Titre — mettez des mots entre *astérisques* pour l'italique" />
@@ -223,7 +223,7 @@ export default function SectionFields({ section, language = "fr" }: { section: S
             data={d}
             name="items"
             label="Étapes — une par ligne : année | titre | texte"
-            placeholder={"1986 | Création de l'école | ..."}
+            placeholder={"2021 | Création de l'école | ..."}
             value={timelineLines}
             rows={6}
           />

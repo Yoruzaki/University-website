@@ -198,6 +198,7 @@ export interface Bulletin {
 
 export interface DigitalService {
   id: string;
+  logo?: string;
   titleFr: string;
   titleAr?: string;
   titleEn?: string;

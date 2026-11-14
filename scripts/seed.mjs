@@ -46,7 +46,7 @@ function page(slug, titleFr, sections) {
 
 const homePage = page("", "Accueil", [
   section("HERO", "DARK", {
-    eyebrow: "École Nationale Supérieure des Forêts — depuis 1986",
+    eyebrow: "École Nationale Supérieure des Forêts — depuis 2021",
     title: "Former les gardiens du patrimoine forestier algérien",
     subtitle:
       "À Khenchela, au cœur des Aurès, l'ENSF forme des ingénieurs et conduit des recherches au service de la forêt, de la biodiversité et des territoires.",
@@ -84,19 +84,38 @@ const homePage = page("", "Accueil", [
   }),
   section("CARD_GRID", "LIGHT", {
     eyebrow: "Formations",
-    title: "Quatre cycles, un même terrain d'étude : la forêt",
-    intro: "De la licence au doctorat, nos programmes forment des spécialistes des sciences forestières.",
+    title: "Deux cycles, une même passion : *la forêt.*",
+    intro: "Du cycle préparatoire au cycle ingénieur, un parcours qui relie les sciences, le laboratoire et le terrain.",
     cards: [
       {
-        tag: "Ingénieur",
-        title: "Ingénieur d'État en sciences forestières",
-        body: "La formation historique de l'école, cinq années d'enseignement intégré.",
-        href: "/programmes",
+        "tag": "Premier cycle",
+        "title": "Cycle préparatoire",
+        "body": "Construire les bases scientifiques pour aborder les sciences forestières.",
+        "href": "/programmes",
+        "imageCaption": "/photos/sortie-foret-garde.jpg"
       },
-      { tag: "Licence", title: "Licence en écologie forestière", body: "Trois années de bases naturalistes et de terrain.", href: "/programmes" },
-      { tag: "Master", title: "Master recherche et gestion forestière", body: "Spécialisation recherche ou professionnelle.", href: "/programmes" },
-      { tag: "Doctorat", title: "Doctorat en sciences forestières", body: "Recherche doctorale au sein de nos laboratoires.", href: "/programmes" },
-    ],
+      {
+        "tag": "Second cycle",
+        "title": "Cycle ingénieur",
+        "body": "Approfondir les sciences forestières et se former aux métiers de la forêt.",
+        "href": "/programmes",
+        "imageCaption": "/photos/releves-fougeres.jpg"
+      },
+      {
+        "tag": "La formation en pratique",
+        "title": "Expérimenter au laboratoire",
+        "body": "Observer, analyser et relier les connaissances à la pratique scientifique.",
+        "href": "/programmes",
+        "imageCaption": "/photos/labo-microscopes.jpg"
+      },
+      {
+        "tag": "La formation en pratique",
+        "title": "Apprendre sur le terrain",
+        "body": "Étudier les écosystèmes forestiers au plus près de leur réalité.",
+        "href": "/programmes",
+        "imageCaption": "/photos/terrain-foret.jpg"
+      }
+    ]
   }),
   section("RESEARCH_SPOTLIGHT", "LIGHT", {
     eyebrow: "À la une de la recherche",
@@ -130,7 +149,7 @@ const homePage = page("", "Accueil", [
     title: "Une question sur nos formations ou nos recherches ?",
     body: "Notre équipe se tient à votre disposition.",
     address: "Route de Batna, Khenchela 40000, Algérie",
-    email: "contact@ensf-khenchela.dz",
+    email: "contact@ensf.dz",
     phone: "+213 32 00 00 00",
   }),
 ]);
@@ -138,7 +157,7 @@ const homePage = page("", "Accueil", [
 const aboutPage = page("a-propos", "À propos", [
   section("EDITORIAL", "LIGHT", {
     index: "01",
-    eyebrow: "Depuis 1986",
+    eyebrow: "Depuis 2021",
     title: "L'École Nationale Supérieure des Forêts",
     body:
       "Implantée à Khenchela, au cœur du massif des Aurès, l'ENSF est l'unique établissement algérien entièrement consacré aux sciences forestières.\n\nElle forme des ingénieurs et des chercheurs capables d'agir sur l'ensemble des enjeux liés à la forêt : gestion durable, biodiversité, lutte contre l'érosion et les incendies, foresterie urbaine et changement climatique.",
@@ -147,10 +166,11 @@ const aboutPage = page("a-propos", "À propos", [
     eyebrow: "Histoire",
     title: "Quelques repères",
     items: [
-      { year: "1986", title: "Création de l'école", body: "Ouverture de l'Institut puis de l'École Nationale Supérieure des Forêts à Khenchela." },
-      { year: "1998", title: "Premiers laboratoires de recherche", body: "Structuration des équipes autour de l'écologie forestière et de la gestion des territoires." },
-      { year: "2010", title: "Ouverture du cycle Master", body: "Lancement des spécialisations recherche et professionnelle." },
-      { year: "2021", title: "Programme doctoral", body: "Accréditation du doctorat en sciences forestières." },
+      {
+        "year": "2021",
+        "title": "Création de l'école",
+        "body": "Création de l’École Nationale Supérieure des Forêts à Khenchela."
+      }
     ],
   }),
   section("QUOTE", "DARK", {
@@ -208,7 +228,7 @@ const contactPage = page("contact", "Contact", [
     title: "Parlons de votre projet d'études ou de recherche",
     body: "L'équipe administrative et pédagogique de l'ENSF vous répond.",
     address: "Route de Batna, Khenchela 40000, Algérie",
-    email: "contact@ensf-khenchela.dz",
+    email: "contact@ensf.dz",
     phone: "+213 32 00 00 00",
   }),
   section("EDITORIAL", "LIGHT", {

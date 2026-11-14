@@ -61,6 +61,9 @@ a.campus-resource:hover { background:var(--mint); }
 .resource-top > span { font-size:10px; }
 .resource-top small { font-size:10px; letter-spacing:.07em; text-transform:uppercase; }
 .resource-top svg { margin-inline-start:auto; flex-shrink:0; }
+.resource-logo { width:124px; height:80px; display:grid; place-items:center; padding:8px 10px; background:white; border:1px solid var(--rule); border-radius:6px; }
+.resource-logo img { width:104px; height:64px; object-fit:contain; }
+.resource-category { display:block; margin-bottom:12px; font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:var(--emerald); }
 .campus-resource h3 { font:600 24px/1.25 var(--display); letter-spacing:-.035em; margin-bottom:14px; color:var(--blue); }
 .campus-resource p { font-size:13px; line-height:1.8; color:var(--muted); margin-bottom:26px; }
 .resource-bottom { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; padding-top:18px; font-size:11px; font-weight:600; color:var(--forest); }

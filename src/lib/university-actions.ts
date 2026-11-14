@@ -19,7 +19,9 @@ export async function saveServiceAction(form: FormData) {
   await requireEditor();
   const f = (key: string) => String(form.get(key) || "").trim();
   if (!f("titleFr")) throw new Error("Le titre est obligatoire.");
-  saveService({ id: f("id") || undefined, titleFr: f("titleFr"), titleAr: f("titleAr"), titleEn: f("titleEn"), summaryFr: f("summaryFr"), summaryAr: f("summaryAr"), summaryEn: f("summaryEn"), url: safeUrl(f("url")), category: f("category"), enabled: form.has("enabled"), order: Number(f("order")) || 0 });
+  const logo = f("logo");
+  if (logo && !/^\/(?!\/)/.test(logo)) safeUrl(logo);
+  saveService({ id: f("id") || undefined, logo, titleFr: f("titleFr"), titleAr: f("titleAr"), titleEn: f("titleEn"), summaryFr: f("summaryFr"), summaryAr: f("summaryAr"), summaryEn: f("summaryEn"), url: safeUrl(f("url")), category: f("category"), enabled: form.has("enabled"), order: Number(f("order")) || 0 });
   revalidatePath("/", "layout");
   redirect("/admin/services?saved=1");
 }

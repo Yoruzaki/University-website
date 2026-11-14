@@ -23,10 +23,12 @@ const platforms = [
  ['sndl','SNDL','المكتبة العلمية الرقمية','SNDL','Accès aux ressources scientifiques et aux bases de données documentaires.','Recherche'],
  ['progres','PROGRES / Espace étudiant','فضاء الطالب','Student portal','Accès aux services de scolarité et au suivi du parcours universitaire.','Scolarité'],
  ['messagerie','Messagerie institutionnelle','البريد الإلكتروني','Institutional email','La messagerie de la communauté universitaire.','Communication'],
- ['recherche','Portail de la recherche','بوابة البحث','Research portal','Projets, ressources et outils au service des enseignants-chercheurs.','Recherche'],
+ ['iltc','ILTC','مركز التعليم المكثف للغات','ILTC','Intensive Language Teaching Center — Centre d’enseignement intensif des langues.','Langues'],
 ];
+const platformUrls = { elearning:'https://elearning.auresnix.com/', bibliotheque:'https://library.ensf.dz/', dspace:'https://dspace.auresnix.com/', edx:'https://edx.auresnix.com/', sndl:'https://www.sndl.cerist.dz/', progres:'https://progres.mesrs.dz/webetu/' };
+const platformLogos = { elearning:'/logos/moodle.svg', bibliotheque:'/logos/library.svg', sndl:'/logos/sndl.jpg', progres:'/logos/progres.png', edx:'/logos/edx.svg', dspace:'/logos/dspace.svg', iltc:'/logos/iltc.png' };
 for (const [key,titleFr,titleAr,titleEn,summaryFr,category] of platforms) {
- if (!db.services.some(s => s.id === key)) db.services.push({ id:key,titleFr,titleAr,titleEn,summaryFr,category,url:'',enabled:true,order:db.services.length });
+ if (!db.services.some(s => s.id === key)) db.services.push({ id:key,titleFr,titleAr,titleEn,summaryFr,category,url:platformUrls[key] || '',logo:platformLogos[key] || '/logo-ensf.jpg',enabled:true,order:db.services.length });
 }
 page('services','Services numériques',[
  section('SERVICE_GRID',{eyebrow:'Votre campus connecté',title:'Les ressources, *à portée de main.*',intro:'Enseignement, documentation, recherche et services universitaires : retrouvez vos accès dans un même espace.'}),
@@ -75,6 +77,7 @@ if (!home.sections.some(s => s.type === 'SERVICE_GRID')) {
  const digital=section('SERVICE_GRID',{eyebrow:'Le campus connecté',title:'Un accès direct à *vos ressources.*',intro:'Apprendre, rechercher, échanger : les plateformes de votre quotidien universitaire.'});
  const life=resources('Vie étudiante','Bien plus que *des études.*','Des rencontres, des initiatives et un campus à vivre au quotidien.',[['Communauté','Clubs & associations','S’investir, partager et faire grandir ses idées.','/vie-etudiante/clubs'],['Terrain','Apprendre autrement','Découvrir la forêt, observer et expérimenter.','/vie-etudiante/terrain'],['Campus','Sport & culture','Trouver sa place dans la vie du campus.','/vie-etudiante/sport-culture'],['Accompagnement','Votre quotidien','Informations pratiques et accompagnement étudiant.','/vie-etudiante/vie-pratique']],'/photos/etudiants-badges.jpg');
  const quick=resources('Repères étudiants','L’essentiel, *sans détour.*','Les informations à retrouver facilement tout au long de l’année.',[['Candidater','Admissions','Préparer votre dossier et votre arrivée.','/admissions'],['S’organiser','Scolarité','Emplois du temps, examens et démarches.','/scolarite'],['Se documenter','Documents','Guides et formulaires de l’école.','/documents'],['Explorer','Recherche','Ressources et vie scientifique.','/recherche/ressources']]);
+ life.hidden=true;
  home.sections=[home.sections[0],...(news?[news]:[]),agenda,digital,quick,life,...home.sections.filter(s=>s.type!=='HERO'&&s.type!=='NEWS_LIST'&&s.type!=='GALLERY')];
  home.sections.forEach((s,i)=>{s.pageId=home.id;s.order=i;});
 }
